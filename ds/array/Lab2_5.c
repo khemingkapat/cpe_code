@@ -39,36 +39,35 @@ void printList(LIST_T *list) {
 }
 
 // using modulo for turning negative index to positive index
-int assignStartEnd(int idx, int size) {
+int assignStartEnd(int idx, int size,int pos) {
 
-    int res = idx % size;
-    return res < 0 ? res + size : res;
+    if(idx < -size){
+        return 0;
+    }else if(idx < 0){
+        return idx += size;
+    }else if(idx > size){
+        return size-1+pos;
+    }
+    return idx;
+
 }
 
 // slicing depend on step, go to l-> r or r-> l
 LIST_T *slice(LIST_T *list, int start, int end, int step) {
     LIST_T *sliced = initList();
 
-    if(start<list->size*-1){
-        start = 0;
-    }else if(start > list->size){
-        start = list->size-1;
-    }
 
-    if(end < list->size*-1){
-        end = 0;
-    }else if(end >list->size){
-        end = list->size;
-    }
-    start = assignStartEnd(start, list->size);
-    end = assignStartEnd(end, list->size);
+    start = assignStartEnd(start, list->size,0);
+    end = assignStartEnd(end, list->size,1);
 
     if (step > 0) {
+        /* puts("positive step"); */
         for (int i = start; i < end; i += step) {
+            /* puts("hello"); */
             append(sliced, *(list->arr + i));
         }
     } else {
-        for (int i = start; i > end; i += step) {
+        for (int i = start;i> -1 && i > end; i += step) {
             append(sliced, *(list->arr + i));
         }
     }
@@ -86,15 +85,30 @@ int main() {
         scanf("%d", &temp);
         append(list, temp);
     }
+    /* printf("orignal list = "); */
     /* printList(list); */
 
     int start, end, step;
     scanf("%d %d %d", &start, &end, &step);
 
+    if(step == 0){
+        puts("empty");
+        exit(0);
+    }
+    if(start >= n && end >= n){
+        puts("empty");
+        exit(0);
+    }else if(start <= -n && end <= -n){
+        puts("empty");
+        exit(0);
+    }
+
     LIST_T *sliced = slice(list, start, end, step);
     printList(sliced);
 
     free(list);
+    free(sliced);
     return 0;
 }
+
 
