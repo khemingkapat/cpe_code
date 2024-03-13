@@ -51,7 +51,7 @@ int main() {
 void enqueue(int *queue, int size, int *front, int *rear, int val) {
     if (*front == -1 && *rear == -1) {
         *front = *rear = 0;
-    } else if ((*rear + 1 == *front) || (*rear - *front >= size - 1)) {
+    } else if (((*rear%size) + 1 == *front) || (*rear - *front >= size - 1)) {
         puts("Queue is full!!");
         return;
     } else {
