@@ -27,7 +27,7 @@ int main() {
 }
 int partition(int *arr, int l, int r) {
     int pivot_val = arr[l];
-    int i = l, j = r+1;
+    int i = l, j = r + 1;
 
     do {
         do {
@@ -41,6 +41,7 @@ int partition(int *arr, int l, int r) {
         arr[i] = arr[j];
         arr[j] = temp;
     } while (i < j);
+
     int temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
