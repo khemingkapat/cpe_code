@@ -1,9 +1,10 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-void quick_sort(int *arr,int l,int r);
+void quick_sort(int *arr, int l, int r);
+int partition(int *arr, int l, int r);
 
-int main(){
+int main() {
     int n;
     scanf("%d", &n);
     int *arr = (int *)malloc(sizeof(int) * n);
@@ -24,43 +25,38 @@ int main(){
 
     return 0;
 }
-int partition(int *arr,int l,int r){
-    int i=l,j=r;
+int partition(int *arr, int l, int r) {
     int pivot_val = arr[l];
-    while(i <= j){
-        while(arr[i]<=pivot_val){
+    int i = l, j = r+1;
+
+    do {
+        do {
             i++;
-        }
+        } while (arr[i] < pivot_val);
 
-        while(arr[j]>pivot_val){
+        do {
             j--;
-        }
-        
+        } while (arr[j] > pivot_val);
         int temp = arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
-    }
-    arr[l]=arr[j];
-    arr[j]=pivot_val;
+        arr[i] = arr[j];
+        arr[j] = temp;
+    } while (i < j);
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 
-    for(int i = l;i<=r;i++){
-        printf("%d ",arr[i]);
-    }
-    puts("");
+    temp = arr[l];
+    arr[l] = arr[j];
+    arr[j] = temp;
 
     return j;
 }
 
-void quick_sort(int *arr,int l,int r){
-    if(r-l <= 0){
-        return ;
+void quick_sort(int *arr, int l, int r) {
+    if (r - l <= 0) {
+        return;
     }
     int pivot = partition(arr, l, r);
-    /* printf("pivot = %d>>%d : arr => ",pivot,arr[pivot]); */
-    /* for(int i = l;i<=r;i++){ */
-    /*     printf("%d ",arr[i]); */
-    /* } */
-    /* puts(""); */
-    quick_sort(arr, l, pivot-1);
-    quick_sort(arr, pivot+1, r);
+    quick_sort(arr, l, pivot - 1);
+    quick_sort(arr, pivot + 1, r);
 }
