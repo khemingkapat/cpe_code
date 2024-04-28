@@ -36,17 +36,15 @@ int main() {
     int mst = 0;
     for (int i = 0; i < e; i++) {
 
-        int end_from=edges[i][0], end_to=edges[i][1];
+        int end_from = edges[i][0], end_to = edges[i][1];
 
-
-        do{
+        do {
             end_from = parents[end_from];
         } while (end_from != parents[end_from]);
 
         do {
             end_to = parents[end_to];
         } while (end_to != parents[end_to]);
-
 
         if (end_from != end_to) {
             mst += edges[i][2];
