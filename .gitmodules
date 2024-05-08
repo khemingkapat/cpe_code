@@ -1,8 +1,4 @@
 [submodule "com_pro/c_snack_shop"]
 	path = com_pro/c_snack_shop
 	url = https://github.com/khemingkapat/c_snack_shop.git
-        ignore = dirty
-[submodule "dsa/benchmark_sorting_algo"]
-	path = dsa/benchmark_sorting_algo
-	url = git@github.com:khemingkapat/benchmark_sorting_algo.git
-        ignore = dirty
+    ignore = dirty
