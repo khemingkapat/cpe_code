@@ -47,7 +47,7 @@
           pandas
           matplotlib
           nbconvert
-          jupyterlab-vim
+          # jupyterlab-vim
           # jupyter-nbextensions-configurator
           # jupyter-contrib-nbextensions
           # jupyter-highlight-selected-word
