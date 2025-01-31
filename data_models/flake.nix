@@ -1,34 +1,26 @@
 {
-  description = "Pure Nix Jupyter Environment with JupyterLab Vim";
+  description = "Jupyter Environment with JupyterLab Vim (Fully Nix-Based)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , flake-utils
-    ,
-    }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
         python = pkgs.python311;
 
-        # 🔹 Define Python environment including jupyterlab_vim
-        pythonEnv = python.withPackages (
-          ps: with ps; [
-            numpy
-            pandas
-            matplotlib
-            nbconvert
-            jupyterlab
-            self.packages.${system}.jupyterlab-vim
-          ]
-        );
+        # Γ£à Define Python environment with required packages
+        pythonEnv = python.withPackages (ps: with ps; [
+          numpy
+          pandas
+          matplotlib
+          nbconvert
+          jupyterlab
+          pip # Γ£à Needed for installing jupyterlab_vim
+        ]);
 
       in
       {
@@ -38,20 +30,23 @@
             pandoc
             texlive.combined.scheme-full
           ];
-          buildInputs = [
-            pythonEnv
-            pkgs.nodejs
-          ];
+          buildInputs = [ pythonEnv ];
 
           shellHook = ''
-            	  echo "✅ Setting up JupyterLab with Vim mode..."
-                  echo "✅ JupyterLab Vim is ready!"
+                        echo "⌛ Setting up JupyterLab with Vim mode..."
+            	    export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
+
+                        export VENV_DIR=".venv"
+                        if [ ! -d "$VENV_DIR" ]; then
+                          python -m venv $VENV_DIR
+                          source $VENV_DIR/bin/activate
+                          pip install --no-cache-dir jupyterlab_vim
+                        else
+                          source $VENV_DIR/bin/activate
+                        fi
+
+                        echo "✅ JupyterLab Vim is ready!"
           '';
         };
-
-        packages = {
-          jupyterlab-vim = pkgs.python311Packages.callPackage ./jupyterlab-vim.nix { };
-        };
-      }
-    );
+      });
 }
