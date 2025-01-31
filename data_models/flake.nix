@@ -19,7 +19,8 @@
           matplotlib
           nbconvert
           jupyterlab
-          pip # Γ£à Needed for installing jupyterlab_vim
+          pip
+          jupyterlab-lsp
         ]);
 
       in
@@ -30,22 +31,23 @@
             pandoc
             texlive.combined.scheme-full
           ];
-          buildInputs = [ pythonEnv ];
+          buildInputs = [ pythonEnv pkgs.nodejs ];
 
           shellHook = ''
-                        echo "⌛ Setting up JupyterLab with Vim mode..."
-            	    export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
+                                    echo "⌛ Setting up JupyterLab with Vim mode..."
+                        	    export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
 
-                        export VENV_DIR=".venv"
-                        if [ ! -d "$VENV_DIR" ]; then
-                          python -m venv $VENV_DIR
-                          source $VENV_DIR/bin/activate
-                          pip install --no-cache-dir jupyterlab_vim
-                        else
-                          source $VENV_DIR/bin/activate
-                        fi
+                                    export VENV_DIR=".venv"
+                                    if [ ! -d "$VENV_DIR" ]; then
+                                      python -m venv $VENV_DIR
+                                      source $VENV_DIR/bin/activate
+                                      pip install --no-cache-dir jupyterlab_vim
+            			  pip install --no-cache-dir 'python-lsp-server[all]'
+                                    else
+                                      source $VENV_DIR/bin/activate
+                                    fi
 
-                        echo "✅ JupyterLab Vim is ready!"
+                                    echo "✅ JupyterLab Vim is ready!"
           '';
         };
       });
