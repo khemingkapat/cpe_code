@@ -7,10 +7,10 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
+    { self
+    , nixpkgs
+    , flake-utils
+    ,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -44,7 +44,7 @@
           ];
 
           shellHook = ''
-            	  echo "✅ Setting up JupyterLab with Vim mode...
+            	  echo "✅ Setting up JupyterLab with Vim mode..."
                   echo "✅ JupyterLab Vim is ready!"
           '';
         };
