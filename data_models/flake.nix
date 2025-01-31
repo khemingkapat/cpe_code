@@ -1,5 +1,5 @@
 {
-  description = "Jupyter Environment with NbExtensions (Fully Nix-Based)";
+  description = "Pure Nix Jupyter Environment with JupyterLab Vim";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -12,48 +12,42 @@
         pkgs = import nixpkgs { inherit system; };
         python = pkgs.python311;
 
-        # jupyter-contrib-nbextensions = pythonPackages.buildPythonPackage rec {
-        #   pname = "jupyter_contrib_nbextensions";
-        #   version = "0.7.0";
-        #   src = pkgs.fetchPypi {
-        #     inherit pname version;
-        #     sha256 = "06e33f005885eb92f89cbe82711e921278201298d08ab0d886d1ba09e8c3e9ca";
-        #   };
-        #   propagatedBuildInputs = with pythonPackages; [
-        #     notebook 
-        #     jupyter-contrib-core
-        #     jupyter-nbextensions-configurator
-        #     jupyter-highlight-selected-word
-        #     ipython-genutils
-        #   ];
-        #   doCheck = false;
-        # };
-        # jupyterlab-vim = pkgs.python311Packages.buildPythonPackage rec {
-        #   pname = "jupyterlab_vim"; # PyPI name uses underscore
-        #   version = "4.14"; # Check for latest version
-        #   src = pkgs.fetchPypi {
-        #     inherit pname version;
-        #     sha256 = "abf2891aafb32f0cb94ad98321ae7ebcbe0cabe523d38d80d569c0a50b85225a"; # Update if needed
-        #   };
-        #   propagatedBuildInputs = with pkgs.python311Packages; [
-        #     jupyterlab
-        #   ];
-        #   doCheck = false;
-        # };
 
-        pythonEnv = python.withPackages (ps: with ps; [
-          # notebook # ✅ Fix: Make sure Jupyter Notebook is installed
-          numpy
-          pandas
-          matplotlib
-          nbconvert
-          # jupyterlab-vim
-          # jupyter-nbextensions-configurator
-          # jupyter-contrib-nbextensions
-          # jupyter-highlight-selected-word
-          # ipython-genutils
-          # lxml
-        ]);
+        # 🔹 Define Python environment including jupyterlab_vim
+        pythonEnv = python.withPackages (ps: with ps;
+          [
+            numpy
+            pandas
+            matplotlib
+            nbconvert
+            jupyterlab
+            (ps.buildPythonPackage rec {
+              pname = "jupyterlab-vim";
+              version = "4.1.4";
+              pyproject = true;
+
+              src = fetchPypi {
+                pname = "jupyterlab_vim";
+                inherit version;
+                hash = "sha256-q/KJGq+zLwy5StmDIa5+vL4Mq+Uj042A1WnApQuFIlo=";
+              };
+
+              build-system = with pkgs; [
+                hatch-nodejs-version
+                hatchling
+                jupyterlab
+              ];
+
+              dependencies = with pkgs; [
+                hatch-jupyter-builder
+                jupyterlab
+              ];
+
+              pythonImportsCheck = [
+                "jupyterlab_vim"
+              ];
+            })
+          ]);
 
       in
       {
@@ -63,11 +57,11 @@
             pandoc
             texlive.combined.scheme-full
           ];
-          buildInputs = [ pythonEnv ];
+          buildInputs = [ pythonEnv pkgs.nodejs ];
 
           shellHook = ''
-            echo "✅ Jupyter environment is ready!"
-            echo "Setting up Jupyter NbExtensions..."
+            	  echo "✅ Setting up JupyterLab with Vim mode...
+                  echo "✅ JupyterLab Vim is ready!"
           '';
         };
       });
