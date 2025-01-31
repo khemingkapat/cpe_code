@@ -2,3 +2,4 @@
 .ccls-cache
 *.ipynb_checkpoints
 result
+*.venv
