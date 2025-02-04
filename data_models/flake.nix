@@ -1,5 +1,5 @@
 {
-  description = "Jupyter Environment with JupyterLab Vim (Fully Nix-Based)";
+  description = "Nix-based JupyterLab with Python";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -12,15 +12,13 @@
         pkgs = import nixpkgs { inherit system; };
         python = pkgs.python311;
 
-        # Γ£à Define Python environment with required packages
         pythonEnv = python.withPackages (ps: with ps; [
           numpy
           pandas
           matplotlib
           nbconvert
           jupyterlab
-          pip
-          jupyterlab-lsp
+          ipykernel
         ]);
 
       in
@@ -31,21 +29,18 @@
             pandoc
             texlive.combined.scheme-full
           ];
-          buildInputs = [ pythonEnv pkgs.nodejs ];
+          buildInputs = [ pythonEnv ];
 
           shellHook = ''
-            	  echo "⌛ Setting up JupyterLab with Vim mode..."
-            	  export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
-            	  export VENV_DIR=".venv"
-                      if [ ! -d "$VENV_DIR" ]; then
-            	    python -m venv $VENV_DIR
-                        source $VENV_DIR/bin/activate
-                        pip install --no-cache-dir jupyterlab_vim
-                        pip install --no-cache-dir 'python-lsp-server[all]'
-                      else
-            	    source $VENV_DIR/bin/activate
-                      fi
-                      echo "✅ JupyterLab Vim is ready!"
+            echo "🔹 Activating JupyterLab environment..."
+
+            # Ensure Jupyter uses the correct Python
+            export PATH="${pythonEnv}/bin:$PATH"
+
+            # Register the kernel
+            ${pythonEnv}/bin/python -m ipykernel install --user --name "nix-python" --display-name "Python (Nix)"
+
+            echo "✅ Jupyter Kernel Registered: Python (Nix)"
           '';
         };
       });
