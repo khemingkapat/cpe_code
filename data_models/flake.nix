@@ -12,13 +12,43 @@
         pkgs = import nixpkgs { inherit system; };
         python = pkgs.python311;
 
+
+
+
         pythonEnv = python.withPackages (ps: with ps; [
           numpy
           pandas
           matplotlib
+          scipy
           nbconvert
           jupyterlab
           ipykernel
+          (ps.buildPythonPackage rec {
+            pname = "jupyterlab-vim";
+            version = "4.1.4";
+            pyproject = true;
+
+            src = fetchPypi {
+              pname = "jupyterlab_vim";
+              inherit version;
+              hash = "sha256-q/KJGq+zLwy5StmDIa5+vL4Mq+Uj042A1WnApQuFIlo=";
+            };
+
+            build-system = with pkgs; [
+              hatch-nodejs-version
+              hatchling
+              jupyterlab
+            ];
+
+            dependencies = with pkgs; [
+              hatch-jupyter-builder
+              jupyterlab
+            ];
+
+            pythonImportsCheck = [
+              "jupyterlab_vim"
+            ];
+          })
         ]);
 
       in
@@ -29,7 +59,7 @@
             pandoc
             texlive.combined.scheme-full
           ];
-          buildInputs = [ pythonEnv ];
+          buildInputs = [ pythonEnv pkgs.nodejs ];
 
           shellHook = ''
             echo "🔹 Activating JupyterLab environment..."
