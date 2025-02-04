@@ -27,5 +27,7 @@ select * from fruit where quantity > 4000 order by quantity;
 # 6 Join table
 using inner `join` 
 ```sql
-select year, province_id,p.province_name,fruit_name,quantity from fruit f,province p where p.province_acronym = f.province_id;
+select year, province_id,p.province_name,fruit_name,quantity 
+from fruit f,province p 
+where p.province_acronym = f.province_id;
 ```
