@@ -1,5 +1,5 @@
 **/main
 .ccls-cache
 *.ipynb_checkpoints
-result
 *.venv
+*.test.*
