@@ -161,10 +161,10 @@ fib:
 	bl	__stack_chk_fail(PLT)
 .L9:
 	mov	r0, r3
-	adds	r7, r7, #24
-	mov	sp, r7
+	adds	r7, r7, #24 // go back to the top of the stack
+	mov	sp, r7 // return stack pointer, means we pop everything out of stack for this function
 	@ sp needed
-	pop	{r4, r5, r7, r8, r9, pc}
+	pop	{r4, r5, r7, r8, r9, pc} // reload all needed value
 .L11:
 	.align	2
 .L10:
