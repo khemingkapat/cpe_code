@@ -25,33 +25,60 @@ int main() {
 
     return 0;
 }
-int partition(int *arr, int l, int r) {
-    int pivot_val = arr[l];
-    int i = l, j = r + 1;
 
-    do {
-        do {
-            i++;
-        } while (arr[i] < pivot_val);
+int partition(int *arr, int left, int right) {
+    int pivot = arr[left];
+    int i = left;
+    int j = right + 1;
 
-        do {
-            j--;
-        } while (arr[j] > pivot_val);
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    } while (i < j);
+    while (i < j) {
+        while (arr[++i] < pivot && i <= right)
+            ; // Find element >= pivot
+        while (arr[--j] > pivot && j >= left)
+            ; // Find element <= pivot
 
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+        if (i < j) { // Only swap if i < j (important!)
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
 
-    temp = arr[l];
-    arr[l] = arr[j];
+    // Place pivot in its correct position
+    int temp = arr[left];
+    arr[left] = arr[j];
     arr[j] = temp;
 
     return j;
 }
+
+/*int partition(int *arr, int l, int r) {*/
+/*    int pivot_val = arr[l];*/
+/*    int i = l, j = r + 1;*/
+/**/
+/*    do {*/
+/*        do {*/
+/*            i++;*/
+/*        } while (arr[i] < pivot_val);*/
+/**/
+/*        do {*/
+/*            j--;*/
+/*        } while (arr[j] > pivot_val);*/
+/*        int temp = arr[i];*/
+/*        arr[i] = arr[j];*/
+/*        arr[j] = temp;*/
+/*    } while (i < j);*/
+/**/
+/*    int temp = arr[i];*/
+/*    arr[i] = arr[j];*/
+/*    arr[j] = temp;*/
+/**/
+/*    temp = arr[l];*/
+/*    arr[l] = arr[j];*/
+/*    arr[j] = temp;*/
+/**/
+/*    return j;*/
+/*}*/
 
 void quick_sort(int *arr, int l, int r) {
     if (r - l <= 0) {
