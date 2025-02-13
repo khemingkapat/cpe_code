@@ -28,7 +28,8 @@ CREATE TABLE bookings (
     PRIMARY KEY (hotelNo, guestNo, dateFrom),
     FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo),
     FOREIGN KEY (guestNo) REFERENCES guests (guestNo),
-    FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo)
+    FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo),
+    CONSTRAINT valid_date CHECK (dateFrom <= dateTo)
 );
 
 ALTER TABLE bookings
