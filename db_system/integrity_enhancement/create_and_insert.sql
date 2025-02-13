@@ -1,40 +1,44 @@
 CREATE TABLE hotels (
-    hotelNo serial PRIMARY KEY,
-    hotelName varchar(50) NOT NULL,
-    city varchar(50) NOT NULL
+    hotelNo serial PRIMARY KEY, -- serial for it to automatically icrease if needed
+    hotelName varchar(50) NOT NULL, -- hotelName is needed
+    city varchar(50) NOT NULL -- city is needed also
 );
 
 CREATE TABLE rooms (
-    roomNo serial CHECK (roomNo BETWEEN 1 AND 100),
-    hotelNo int NOT NULL,
-    type varchar(50) NOT NULL CHECK (type IN ('Single', 'Double', 'Family')),
-    price int NOT NULL CHECK (price BETWEEN 10 AND 100),
-    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
-    PRIMARY KEY (roomNo, hotelNo)
+    roomNo serial CHECK (roomNo BETWEEN 1 AND 100), -- again, use serial, but check between 1-100 since it is constraint
+    hotelNo int NOT NULL, -- hotelNo as a foreign key to hotels table, needed
+    type varchar(50) NOT NULL CHECK (type IN ('Single', 'Double', 'Family')), -- specifiy the domain of room type
+    price int NOT NULL CHECK (price BETWEEN 10 AND 100), -- price as int and within range
+    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE, -- use delete on cascade since if hotel if delte, we would delete the row with that hotel
+    PRIMARY KEY (roomNo, hotelNo) -- create composite primary key since we hotelNo wouldn't be unique
 );
 
 CREATE TABLE guests (
-    guestNo serial PRIMARY KEY,
+    guestNo serial PRIMARY KEY, -- again, serial
     guestName varchar(50) NOT NULL,
     guestAddress varchar(50) NOT NULL
 );
 
 CREATE TABLE bookings (
-    hotelNo int NOT NULL,
-    guestNo int NOT NULL,
-    dateFrom date CHECK (dateFrom > CURRENT_DATE),
-    dateTo date CHECK (dateTo > CURRENT_DATE),
-    roomNo int NOT NULL,
-    PRIMARY KEY (hotelNo, guestNo, dateFrom),
+    hotelNo int NOT NULL, -- hotelNo as foreign key
+    guestNo int NOT NULL, -- geustNo as foriegn key also
+    dateFrom date CHECK (dateFrom > CURRENT_DATE), -- dateFrom as type of date, and need to be more
+    dateTo date CHECK (dateTo > CURRENT_DATE), -- same as dateFrom
+    roomNo int NOT NULL, -- as foriegn key
+    PRIMARY KEY (hotelNo, guestNo, dateFrom), -- composite pk since one alone is not unique
+    -- these three are to specify the foriegn key
     FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
     FOREIGN KEY (guestNo) REFERENCES guests (guestNo) ON DELETE CASCADE,
     FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo) ON DELETE CASCADE,
+    -- check the common sense of the date
     CONSTRAINT valid_date CHECK (dateFrom <= dateTo)
 );
 
+-- this use to make sure no room is book the same date, I think for better we need subquery as constraint, but we couldn't use it
 ALTER TABLE bookings
     ADD CONSTRAINT unique_room_booking UNIQUE (hotelNo, roomNo, dateFrom);
 
+-- again, this is for no guest could book 2 room at the same time, idk why, doesn't make so much sence for rich people
 ALTER TABLE bookings
     ADD CONSTRAINT unique_guest_booking UNIQUE (guestno, dateFrom);
 
