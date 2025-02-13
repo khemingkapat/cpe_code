@@ -9,7 +9,7 @@ CREATE TABLE rooms (
     hotelNo int NOT NULL,
     type varchar(50) NOT NULL CHECK (type IN ('Single', 'Double', 'Family')),
     price int NOT NULL CHECK (price BETWEEN 10 AND 100),
-    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo),
+    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
     PRIMARY KEY (roomNo, hotelNo)
 );
 
@@ -26,9 +26,9 @@ CREATE TABLE bookings (
     dateTo date NOT NULL CHECK (dateTo > CURRENT_DATE),
     roomNo int NOT NULL,
     PRIMARY KEY (hotelNo, guestNo, dateFrom),
-    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo),
-    FOREIGN KEY (guestNo) REFERENCES guests (guestNo),
-    FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo),
+    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
+    FOREIGN KEY (guestNo) REFERENCES guests (guestNo) ON DELETE CASCADE,
+    FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo) ON DELETE CASCADE,
     CONSTRAINT valid_date CHECK (dateFrom <= dateTo)
 );
 
