@@ -1,3 +1,43 @@
+CREATE TABLE hotels (
+    hotelNo serial PRIMARY KEY,
+    hotelName varchar(50) NOT NULL,
+    city varchar(50) NOT NULL
+);
+
+CREATE TABLE rooms (
+    roomNo serial CHECK (roomNo BETWEEN 1 AND 100),
+    hotelNo int NOT NULL,
+    type varchar(50) NOT NULL CHECK (type IN ('Single', 'Double', 'Family')),
+    price int NOT NULL CHECK (price BETWEEN 10 AND 100),
+    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
+    PRIMARY KEY (roomNo, hotelNo)
+);
+
+CREATE TABLE guests (
+    guestNo serial PRIMARY KEY,
+    guestName varchar(50) NOT NULL,
+    guestAddress varchar(50) NOT NULL
+);
+
+CREATE TABLE bookings (
+    hotelNo int NOT NULL,
+    guestNo int NOT NULL,
+    dateFrom date CHECK (dateFrom > CURRENT_DATE),
+    dateTo date CHECK (dateTo > CURRENT_DATE),
+    roomNo int NOT NULL,
+    PRIMARY KEY (hotelNo, guestNo, dateFrom),
+    FOREIGN KEY (hotelNo) REFERENCES hotels (hotelNo) ON DELETE CASCADE,
+    FOREIGN KEY (guestNo) REFERENCES guests (guestNo) ON DELETE CASCADE,
+    FOREIGN KEY (roomNo, hotelNo) REFERENCES rooms (roomNo, hotelNo) ON DELETE CASCADE,
+    CONSTRAINT valid_date CHECK (dateFrom <= dateTo)
+);
+
+ALTER TABLE bookings
+    ADD CONSTRAINT unique_room_booking UNIQUE (hotelNo, roomNo, dateFrom);
+
+ALTER TABLE bookings
+    ADD CONSTRAINT unique_guest_booking UNIQUE (guestno, dateFrom);
+
 INSERT INTO hotels (hotelNo, hotelName, city)
     VALUES (1, 'Grosvenor Hotel', 'London'),
     (2, 'Imperial Hotel', 'London'),
@@ -35,11 +75,12 @@ INSERT INTO guests (guestNo, guestName, guestAddress)
     (10, 'Jack Anderson', '741 Elm St, London');
 
 INSERT INTO bookings (hotelNo, guestNo, dateFrom, dateTo, roomNo)
-    VALUES (1, 1, '2025-02-08', '2025-02-15', 1),
-    (1, 2, '2025-02-08', '2025-02-12', 2),
+    VALUES
+    -- (1, 1, '2025-02-08', '2025-02-15', 1),
+    -- (1, 2, '2025-02-08', '2025-02-12', 2),
     (1, 3, '2025-08-01', '2025-08-07', 3),
     (2, 4, '2025-08-05', '2025-08-10', 5),
-    (2, 5, '2025-02-08', '2025-02-11', 6),
+    -- (2, 5, '2025-02-08', '2025-02-11', 6),
     (3, 6, '2025-08-15', '2025-08-20', 7),
     (3, 7, '2025-03-01', '2025-03-05', 8),
     (4, 8, '2025-08-20', '2025-08-25', 9),
