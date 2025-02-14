@@ -29,7 +29,7 @@ select guestName from guests where guestAddress like '%London' order by guestNam
 ## List all double or family rooms with a price below £40.00 per night, in ascending order of price.
 so we list by `in` and check if the `type` of room is in the list we want
 ```sql
-select * from room where type in ('Double','Family')
+select * from rooms where type in ('Double','Family');
 ```
 
 ## List the bookings for which no dateTo has been specified.
@@ -97,7 +97,7 @@ select sum(price) from rooms r, hotels h, bookings b
 where h.hotelName = 'Grosvenor Hotel'
 and b.hotelNo = h.hotelNo
 and current_date between b.dateFrom and b.dateTo
-and r.roomNo = b.roomNo and r.hotelNo = b.hotelNo
+and r.roomNo = b.roomNo and r.hotelNo = b.hotelNo;
 ```
 ## List the rooms that are currently unoccupied at the Grosvenor Hotel.
 to see unoccupied, we need to make sure that that room no is not in the `bookings` table column `roomNo`
