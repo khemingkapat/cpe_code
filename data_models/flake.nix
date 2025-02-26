@@ -23,6 +23,8 @@
           nbconvert
           jupyterlab
           ipykernel
+          plotly
+          seaborn
           (ps.buildPythonPackage rec {
             pname = "jupyterlab-vim";
             version = "4.1.4";
