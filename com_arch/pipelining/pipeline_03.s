@@ -31,44 +31,44 @@ main:
 	push {r7, lr}
 	sub  sp, sp, #16
 	add  r7, sp, #0
-	movs r3, #0                                    // sum = 0
-	str  r3, [r7]                                  // store
-	b    .L2
+	movs r3, #0                                    // i=0
+	str  r3, [r7]                                  // store i on top of stack could create Data Hazard
+	b    .L2                                       // go to .L2(branching causing control
 
 .L5:
-	movs r3, #0       // i = 0
+	movs r3, #0       // initialize j
 	str  r3, [r7, #4] // store at stack+4
 	b    .L3
 
 .L4:
-	ldr  r2, [r7]      // load sum
-	ldr  r3, [r7, #4]  // load i
-	add  r3, r3, r2    // add
-	str  r3, [r7, #12]
-	ldr  r2, [r7, #8]
-	ldr  r3, [r7, #12]
-	add  r3, r3, r2
-	str  r3, [r7, #8]
-	ldr  r3, [r7, #4]
-	adds r3, r3, #1
-	str  r3, [r7, #4]
+	ldr  r2, [r7]      // load i
+	ldr  r3, [r7, #4]  // load j
+	add  r3, r3, r2    // add i +j
+	str  r3, [r7, #12] // store for x
+	ldr  r2, [r7, #8]  // load sum
+	ldr  r3, [r7, #12] // store at x
+	add  r3, r3, r2    // sum = sum +x
+	str  r3, [r7, #8]  // store back at sum
+	ldr  r3, [r7, #4]  // load j
+	adds r3, r3, #1    // j = j+1
+	str  r3, [r7, #4]  // store back
 
-.L3:
-	ldr  r3, [r7, #4] // load i
-	cmp  r3, #9       // compare i and 9
-	ble  .L4          // if i <= 9 continue
-	ldr  r3, [r7]
-	adds r3, r3, #1
-	str  r3, [r7]
+.L3:  // loop j
+	ldr  r3, [r7, #4] // load j
+	cmp  r3, #9       // compare j and 9
+	ble  .L4          // if j<= 9
+	ldr  r3, [r7]     // load i
+	adds r3, r3, #1   // i = i+1
+	str  r3, [r7]     // store back
 
-.L2:
-	ldr r3, [r7]
-	cmp r3, #9
+.L2:  // loop i
+	ldr r3, [r7]     // load i
+	cmp r3, #9       // if i <= 9(i<10)
 	ble .L5
 	ldr r1, [r7, #8]
 	ldr r3, .L7
 
-.LPIC0:
+.LPIC0:  // as end of function, load value and print out, as well as clear stack
 	add  r3, pc
 	mov  r0, r3
 	bl   printf(PLT)
