@@ -12,3 +12,6 @@
     path = db_system/been_chillin
     url = https://github.com/khemingkapat/been_chillin.git
     ignore = dirty
+[submodule "data_models/csgo_model"]
+	path = data_models/csgo_model
+	url = git@github.com:khemingkapat/csgo_model.git
