@@ -7,3 +7,8 @@
     path = dsa/benchmark_sorting_algo
     url = https://github.com/khemingkapat/benchmark_sorting_algo.git
     ignore = dirty
+
+[submodule "db_system/been_chillin"]
+    path = db_system/been_chillin
+    url = https://github.com/khemingkapat/been_chillin.git
+    ignore = dirty
