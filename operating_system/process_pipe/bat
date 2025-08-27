@@ -1,0 +1,807 @@
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 19:48 ?        00:00:01 /sbin/init splash
+root           2       0  0 19:48 ?        00:00:00 [kthreadd]
+root           3       2  0 19:48 ?        00:00:00 [pool_workqueue_release]
+root           4       2  0 19:48 ?        00:00:00 [kworker/R-rcu_g]
+root           5       2  0 19:48 ?        00:00:00 [kworker/R-rcu_p]
+root           6       2  0 19:48 ?        00:00:00 [kworker/R-slub_]
+root           7       2  0 19:48 ?        00:00:00 [kworker/R-netns]
+root           9       2  0 19:48 ?        00:00:00 [kworker/0:0H-events_highpri]
+root          12       2  0 19:48 ?        00:00:00 [kworker/R-mm_pe]
+root          13       2  0 19:48 ?        00:00:00 [rcu_tasks_kthread]
+root          14       2  0 19:48 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          15       2  0 19:48 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          16       2  0 19:48 ?        00:00:00 [ksoftirqd/0]
+root          17       2  0 19:48 ?        00:00:01 [rcu_preempt]
+root          18       2  0 19:48 ?        00:00:00 [migration/0]
+root          19       2  0 19:48 ?        00:00:00 [idle_inject/0]
+root          20       2  0 19:48 ?        00:00:00 [cpuhp/0]
+root          21       2  0 19:48 ?        00:00:00 [cpuhp/1]
+root          22       2  0 19:48 ?        00:00:00 [idle_inject/1]
+root          23       2  0 19:48 ?        00:00:00 [migration/1]
+root          24       2  0 19:48 ?        00:00:00 [ksoftirqd/1]
+root          26       2  0 19:48 ?        00:00:00 [kworker/1:0H-kblockd]
+root          27       2  0 19:48 ?        00:00:00 [cpuhp/2]
+root          28       2  0 19:48 ?        00:00:00 [idle_inject/2]
+root          29       2  0 19:48 ?        00:00:00 [migration/2]
+root          30       2  0 19:48 ?        00:00:00 [ksoftirqd/2]
+root          32       2  0 19:48 ?        00:00:00 [kworker/2:0H-events_highpri]
+root          33       2  0 19:48 ?        00:00:00 [cpuhp/3]
+root          34       2  0 19:48 ?        00:00:00 [idle_inject/3]
+root          35       2  0 19:48 ?        00:00:00 [migration/3]
+root          36       2  0 19:48 ?        00:00:00 [ksoftirqd/3]
+root          38       2  0 19:48 ?        00:00:00 [kworker/3:0H-events_highpri]
+root          39       2  0 19:48 ?        00:00:00 [cpuhp/4]
+root          40       2  0 19:48 ?        00:00:00 [idle_inject/4]
+root          41       2  0 19:48 ?        00:00:00 [migration/4]
+root          42       2  0 19:48 ?        00:00:01 [ksoftirqd/4]
+root          44       2  0 19:48 ?        00:00:00 [kworker/4:0H-events_highpri]
+root          45       2  0 19:48 ?        00:00:00 [cpuhp/5]
+root          46       2  0 19:48 ?        00:00:00 [idle_inject/5]
+root          47       2  0 19:48 ?        00:00:00 [migration/5]
+root          48       2  0 19:48 ?        00:00:00 [ksoftirqd/5]
+root          50       2  0 19:48 ?        00:00:00 [kworker/5:0H-events_highpri]
+root          51       2  0 19:48 ?        00:00:00 [cpuhp/6]
+root          52       2  0 19:48 ?        00:00:00 [idle_inject/6]
+root          53       2  0 19:48 ?        00:00:00 [migration/6]
+root          54       2  0 19:48 ?        00:00:00 [ksoftirqd/6]
+root          56       2  0 19:48 ?        00:00:00 [kworker/6:0H-events_highpri]
+root          57       2  0 19:48 ?        00:00:00 [cpuhp/7]
+root          58       2  0 19:48 ?        00:00:00 [idle_inject/7]
+root          59       2  0 19:48 ?        00:00:00 [migration/7]
+root          60       2  0 19:48 ?        00:00:00 [ksoftirqd/7]
+root          62       2  0 19:48 ?        00:00:00 [kworker/7:0H-events_highpri]
+root          63       2  0 19:48 ?        00:00:00 [kdevtmpfs]
+root          64       2  0 19:48 ?        00:00:00 [kworker/R-inet_]
+root          65       2  0 19:48 ?        00:00:00 [kauditd]
+root          67       2  0 19:48 ?        00:00:00 [khungtaskd]
+root          69       2  0 19:48 ?        00:00:00 [oom_reaper]
+root          70       2  0 19:48 ?        00:00:00 [kworker/R-write]
+root          71       2  0 19:48 ?        00:00:00 [kcompactd0]
+root          72       2  0 19:48 ?        00:00:00 [ksmd]
+root          74       2  0 19:48 ?        00:00:00 [khugepaged]
+root          75       2  0 19:48 ?        00:00:00 [kworker/R-kinte]
+root          76       2  0 19:48 ?        00:00:00 [kworker/R-kbloc]
+root          77       2  0 19:48 ?        00:00:00 [kworker/R-blkcg]
+root          78       2  0 19:48 ?        00:00:10 [irq/9-acpi]
+root          80       2  0 19:48 ?        00:00:00 [kworker/R-tpm_d]
+root          81       2  0 19:48 ?        00:00:00 [kworker/R-ata_s]
+root          82       2  0 19:48 ?        00:00:00 [kworker/R-md]
+root          83       2  0 19:48 ?        00:00:00 [kworker/R-md_bi]
+root          84       2  0 19:48 ?        00:00:00 [kworker/R-edac-]
+root          85       2  0 19:48 ?        00:00:00 [kworker/R-devfr]
+root          86       2  0 19:48 ?        00:00:00 [watchdogd]
+root          87       2  0 19:48 ?        00:00:00 [kworker/4:1H-events_highpri]
+root          88       2  0 19:48 ?        00:00:00 [kswapd0]
+root          89       2  0 19:48 ?        00:00:00 [ecryptfs-kthread]
+root          90       2  0 19:48 ?        00:00:00 [kworker/R-kthro]
+root          91       2  0 19:48 ?        00:00:00 [irq/123-pciehp]
+root          92       2  0 19:48 ?        00:00:00 [kworker/1:1-events]
+root          96       2  0 19:48 ?        00:00:00 [kworker/7:1-mm_percpu_wq]
+root          97       2  0 19:48 ?        00:00:00 [kworker/R-acpi_]
+root          98       2  0 19:48 ?        00:00:00 [hwrng]
+root         101       2  0 19:48 ?        00:00:00 [kworker/R-mld]
+root         102       2  0 19:48 ?        00:00:00 [kworker/7:1H-events_highpri]
+root         103       2  0 19:48 ?        00:00:00 [kworker/R-ipv6_]
+root         110       2  0 19:48 ?        00:00:00 [kworker/R-kstrp]
+root         125       2  0 19:48 ?        00:00:00 [kworker/R-charg]
+root         149       2  0 19:48 ?        00:00:00 [kworker/5:1H-events_highpri]
+root         152       2  0 19:48 ?        00:00:00 [kworker/6:1H-kblockd]
+root         164       2  0 19:48 ?        00:00:00 [kworker/3:1H-events_highpri]
+root         187       2  0 19:48 ?        00:00:00 [kworker/0:1H-events_highpri]
+root         188       2  0 19:48 ?        00:00:00 [kworker/1:1H]
+root         189       2  0 19:48 ?        00:00:00 [kworker/2:1H-kblockd]
+root         190       2  0 19:48 ?        00:00:00 [kworker/5:2-mm_percpu_wq]
+root         192       2  0 19:48 ?        00:00:00 [kworker/R-nvme-]
+root         193       2  0 19:48 ?        00:00:00 [kworker/R-nvme-]
+root         194       2  0 19:48 ?        00:00:00 [kworker/R-nvme-]
+root         195       2  0 19:48 ?        00:00:00 [kworker/R-nvme-]
+root         198       2  0 19:48 ?        00:00:00 [irq/37-CUST0000:00]
+root         208       2  0 19:48 ?        00:00:00 [kworker/R-USBC0]
+root         245       2  0 19:48 ?        00:00:00 [jbd2/nvme0n1p5-8]
+root         246       2  0 19:48 ?        00:00:00 [kworker/R-ext4-]
+root         293       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-journald
+root         329       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root         358       2  0 19:48 ?        00:00:00 [psimon]
+root         424       2  0 19:48 ?        00:00:00 [kworker/R-cfg80]
+root         427       2  0 19:48 ?        00:00:00 [irq/167-mei_me]
+root         432       2  0 19:48 ?        00:00:00 [irq/168-iwlwifi:default_queue]
+root         433       2  0 19:48 ?        00:00:00 [irq/169-iwlwifi:queue_1]
+root         434       2  0 19:48 ?        00:00:00 [irq/170-iwlwifi:queue_2]
+root         435       2  0 19:48 ?        00:00:00 [irq/171-iwlwifi:queue_3]
+root         436       2  0 19:48 ?        00:00:00 [irq/172-iwlwifi:queue_4]
+root         437       2  0 19:48 ?        00:00:00 [irq/173-iwlwifi:queue_5]
+root         438       2  0 19:48 ?        00:00:00 [irq/174-iwlwifi:queue_6]
+root         439       2  0 19:48 ?        00:00:00 [irq/175-iwlwifi:queue_7]
+root         440       2  0 19:48 ?        00:00:00 [irq/176-iwlwifi:queue_8]
+root         441       2  0 19:48 ?        00:00:00 [irq/177-iwlwifi:exception]
+root         445       2  0 19:48 ?        00:00:00 [kworker/0:4-mm_percpu_wq]
+root         622       2  0 19:48 ?        00:00:00 [kworker/R-crypt]
+root         623       2  0 19:48 ?        00:00:00 [kworker/R-ttm]
+systemd+     636       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-oomd
+systemd+     644       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-resolved
+systemd+     646       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-timesyncd
+root         647       2  0 19:48 ?        00:00:00 [card1-crtc0]
+root         648       2  0 19:48 ?        00:00:00 [card1-crtc1]
+root         649       2  0 19:48 ?        00:00:00 [card1-crtc2]
+root         650       2  0 19:48 ?        00:00:00 [card1-crtc3]
+root         659       1  0 19:48 ?        00:00:00 /usr/libexec/accounts-daemon
+avahi        683       1  0 19:48 ?        00:00:00 avahi-daemon: running [khemlaptop.local]
+root         684       1  0 19:48 ?        00:00:01 /usr/libexec/bluetooth/bluetoothd
+root         685       1  0 19:48 ?        00:00:00 /usr/sbin/cron -f -P
+message+     686       1  0 19:48 ?        00:00:01 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+gnome-r+     689       1  0 19:48 ?        00:00:00 /usr/libexec/gnome-remote-desktop-daemon --system
+root         692       1  0 19:48 ?        00:00:01 /usr/libexec/iio-sensor-proxy
+polkitd      698       1  0 19:48 ?        00:00:01 /usr/lib/polkit-1/polkitd --no-debug
+root         700       1  0 19:48 ?        00:00:00 /usr/libexec/power-profiles-daemon
+root         708       1  0 19:48 ?        00:00:00 /usr/libexec/switcheroo-control
+root         712       1  0 19:48 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root         715       1  0 19:48 ?        00:00:07 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root         718       1  0 19:48 ?        00:00:00 /usr/libexec/udisks2/udisksd
+avahi        734     683  0 19:48 ?        00:00:00 avahi-daemon: chroot helper
+root         749       1  0 19:48 ?        00:00:00 /usr/bin/vmware-usbarbitrator
+root         778       1  0 19:48 ?        00:00:00 /usr/sbin/NetworkManager --no-daemon
+root         790       1  0 19:48 ?        00:00:00 /usr/sbin/wpa_supplicant -u -s -O DIR=/run/wpa_supplicant GROUP=netdev
+syslog       824       1  0 19:48 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         850       1  0 19:48 ?        00:00:00 /usr/sbin/ModemManager
+root         860       1  0 19:48 ?        00:00:00 /usr/libexec/boltd
+root         878       1  0 19:48 ?        00:00:01 /usr/libexec/upowerd
+root         938       2  0 19:48 ?        00:00:00 [irq/203-AudioDSP]
+root         960       1  0 19:48 ?        00:00:00 /usr/sbin/cupsd -l
+root         963       1  0 19:48 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         980       1  0 19:48 ?        00:00:00 /usr/sbin/gdm3
+root         995       2  0 19:48 ?        00:00:00 [psimon]
+rtkit       1020       1  0 19:48 ?        00:00:00 /usr/libexec/rtkit-daemon
+root        1092       2  0 19:48 ?        00:00:00 [krfcommd]
+colord      1145       1  0 19:48 ?        00:00:00 /usr/libexec/colord
+cups-br+    1420       1  0 19:48 ?        00:00:00 /usr/sbin/cups-browsed
+kernoops    1423       1  0 19:48 ?        00:00:00 /usr/sbin/kerneloops --test
+kernoops    1430       1  0 19:48 ?        00:00:00 /usr/sbin/kerneloops
+root        1506       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-bridge -s 6 -d /var/run/vmnet-bridge-0.pid -n 0
+root        1634       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-netifup -s 6 -d /var/run/vmnet-netifup-vmnet1.pid /dev/vmnet1 vmnet1
+root        1644       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-dhcpd -s 6 -cf /etc/vmware/vmnet1/dhcpd/dhcpd.conf -lf /etc/vmware/vmnet1/dhcpd/dhcpd.leases -pf /var/run/vmnet-dhcpd-vmnet1.pid vmnet1
+root        1647       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-natd -s 6 -m /etc/vmware/vmnet8/nat.mac -c /etc/vmware/vmnet8/nat/nat.conf
+root        1649       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-netifup -s 6 -d /var/run/vmnet-netifup-vmnet8.pid /dev/vmnet8 vmnet8
+root        1655       1  0 19:48 ?        00:00:00 /usr/bin/vmnet-dhcpd -s 6 -cf /etc/vmware/vmnet8/dhcpd/dhcpd.conf -lf /etc/vmware/vmnet8/dhcpd/dhcpd.leases -pf /var/run/vmnet-dhcpd-vmnet8.pid vmnet8
+root        1717       1  0 19:48 ?        00:00:00 /usr/sbin/vmware-authdlauncher
+root        1754     980  0 19:49 ?        00:00:00 gdm-session-worker [pam/gdm-password]
+khemi       1766       1  0 19:49 ?        00:00:08 /usr/lib/systemd/systemd --user
+khemi       1772    1766  0 19:49 ?        00:00:00 (sd-pam)
+khemi       1785    1766  0 19:49 ?        00:00:01 /usr/bin/pipewire
+khemi       1786    1766  0 19:49 ?        00:00:00 /usr/bin/pipewire -c filter-chain.conf
+khemi       1788    1766  0 19:49 ?        00:00:04 /usr/bin/wireplumber
+khemi       1789    1766  0 19:49 ?        00:00:25 /usr/bin/pipewire-pulse
+khemi       1791    1766  0 19:49 ?        00:00:00 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring
+khemi       1801    1766  0 19:49 ?        00:00:01 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+khemi       1838    1754  0 19:49 tty2     00:00:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+khemi       1844    1838  0 19:49 tty2     00:00:00 /usr/libexec/gnome-session-binary --session=ubuntu
+khemi       1915    1766  0 19:49 ?        00:00:00 /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr
+khemi       1919    1766  0 19:49 ?        00:00:00 /usr/libexec/gnome-session-ctl --monitor
+khemi       1934    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfsd
+khemi       1941    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+khemi       1944    1766  0 19:49 ?        00:00:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+khemi       1969    1766  0 19:49 ?        00:00:00 /usr/libexec/xdg-permission-store
+khemi       1980    1944  0 19:49 ?        00:00:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+khemi       1981    1766  6 19:49 ?        00:04:18 /usr/bin/gnome-shell
+khemi       1994    1980  0 19:49 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus
+khemi       2081    1766  0 19:49 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+khemi       2100    1766  0 19:49 ?        00:00:00 /usr/libexec/gnome-shell-calendar-server
+khemi       2108    1766  0 19:49 ?        00:00:00 /usr/libexec/evolution-source-registry
+khemi       2117    1766  0 19:49 ?        00:00:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+khemi       2137    1766  0 19:49 ?        00:00:13 /usr/bin/ibus-daemon --panel disable
+khemi       2139    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-a11y-settings
+khemi       2144    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-color
+khemi       2148    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-datetime
+khemi       2153    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-housekeeping
+khemi       2157    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-keyboard
+khemi       2160    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-media-keys
+khemi       2161    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-power
+khemi       2162    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-print-notifications
+khemi       2165    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-rfkill
+khemi       2168    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-screensaver-proxy
+khemi       2178    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-sharing
+khemi       2179    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-smartcard
+khemi       2181    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-sound
+khemi       2182    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-wacom
+khemi       2187    1944  0 19:49 ?        00:00:00 /usr/libexec/gsd-disk-utility-notify
+khemi       2195    1944  0 19:49 ?        00:00:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+khemi       2196    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfs-udisks2-volume-monitor
+khemi       2267    2137  0 19:49 ?        00:00:00 /usr/libexec/ibus-memconf
+khemi       2268    1766  0 19:49 ?        00:00:00 /usr/libexec/goa-daemon
+khemi       2269    2137  0 19:49 ?        00:00:04 /usr/libexec/ibus-extension-gtk3
+khemi       2277    1766  0 19:49 ?        00:00:00 /usr/libexec/ibus-portal
+khemi       2314    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+khemi       2334    1766  0 19:49 ?        00:00:00 /usr/libexec/goa-identity-service
+khemi       2345    1766  0 19:49 ?        00:00:00 /usr/libexec/gsd-printer
+khemi       2361    1766  0 19:49 ?        00:00:00 /usr/libexec/evolution-calendar-factory
+khemi       2369    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfs-afc-volume-monitor
+khemi       2378    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+khemi       2383    1766  0 19:49 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+khemi       2394    1766  0 19:49 ?        00:00:00 /usr/libexec/evolution-addressbook-factory
+khemi       2419    1766  0 19:49 ?        00:00:00 /usr/libexec/dconf-service
+khemi       2424    2137  0 19:49 ?        00:00:04 /usr/libexec/ibus-engine-simple
+khemi       2464    1766  0 19:49 ?        00:00:00 /usr/libexec/tracker-miner-fs-3
+khemi       2486    1766  0 19:49 ?        00:00:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+khemi       2554    1766  0 19:49 ?        00:00:00 /usr/bin/python3 /usr/bin/gnome-terminal --wait
+khemi       2556    2554  0 19:49 ?        00:00:00 /usr/bin/gnome-terminal.real --wait
+khemi       2562    1766  2 19:49 ?        00:01:41 /usr/libexec/gnome-terminal-server
+khemi       2568    1766  0 19:49 ?        00:00:00 /usr/libexec/xdg-desktop-portal
+khemi       2573    1766  0 19:49 ?        00:00:00 /usr/libexec/xdg-document-portal
+root        2579    2573  0 19:49 ?        00:00:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+khemi       2583    1766  0 19:49 ?        00:00:00 /usr/libexec/xdg-desktop-portal-gnome
+khemi       2595    1766  0 19:49 ?        00:00:00 /usr/libexec/xdg-desktop-portal-gtk
+khemi       2604    2562  0 19:49 pts/0    00:00:01 bash
+khemi       2720    1934  0 19:49 ?        00:00:00 /usr/libexec/gvfsd-trash --spawner :1.17 /org/gtk/gvfs/exec_spaw/0
+khemi       3558    1766  0 19:50 ?        00:00:13 /nix/store/v6vd727rf6h7qs8ghqgqmp5bzcca80rs-zellij-0.42.2/bin/zellij --server /run/user/1000/zellij/0.42.2/adamant-foxglove
+khemi       3583    3558  0 19:50 pts/1    00:00:00 /bin/bash
+khemi       3672    3558  0 19:50 pts/2    00:00:00 /bin/bash
+khemi       3679    1766  0 19:50 ?        00:00:00 /usr/libexec/gvfsd-metadata
+khemi       3695    1944  0 19:50 ?        00:00:00 /usr/bin/update-notifier
+khemi       3849    3583  0 19:50 pts/1    00:00:00 /nix/store/inkzmdd9wgscka3dsspf8mqp9i4kcxja-neovim-unwrapped-0.11.2/bin/nvim --cmd lua vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.python3_host_prog='/nix/store/d2qcdsiqh9n8kzw2nfhhlqgw4cww0i0m-neovim-0.11.2/bin/nvim-python3';vim.g.loaded_ruby_provider=0 .
+khemi       3850    3849  0 19:50 ?        00:00:00 /nix/store/inkzmdd9wgscka3dsspf8mqp9i4kcxja-neovim-unwrapped-0.11.2/bin/nvim --embed --cmd lua vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.python3_host_prog='/nix/store/d2qcdsiqh9n8kzw2nfhhlqgw4cww0i0m-neovim-0.11.2/bin/nvim-python3';vim.g.loaded_ruby_provider=0 .
+khemi       4052    1981 12 19:50 ?        00:07:55 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/bin/.firefox-wrapped --name firefox
+khemi       4058    4052  0 19:50 ?        00:00:00 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/crashhelper 4052 9 /tmp/ 10 12
+khemi       4121    4052  0 19:50 ?        00:00:00 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -parentBuildID 20250707120347 -prefsHandle 0:37993 -prefMapHandle 1:270873 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {cc4f88c4-c08b-4fcd-9a5e-cbd6aeb4864b} -parentPid 4052 -crashReporter 4 -crashHelperPid 4058 -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 1 socket
+khemi       4135    4052  0 19:50 ?        00:00:04 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:38117 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {74248ec9-8522-4da5-a54d-9881858228a7} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 2 tab
+khemi       4140    4052  2 19:50 ?        00:01:16 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -parentBuildID 20250707120347 -prefsHandle 0:38117 -prefMapHandle 1:270873 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {55c2c632-fda0-47fb-aebe-43afdd9f8e20} -parentPid 4052 -crashReporter 4 -crashHelperPid 4058 -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 3 rdd
+khemi       4182    4052  0 19:50 ?        00:00:20 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:33345 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {8e1a1bdb-6102-49c5-8e01-5774049c3f09} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 4 tab
+khemi       4229    4052  0 19:50 ?        00:00:01 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:46839 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {6c272b06-6997-4401-89bd-a8b224bb9629} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 5 tab
+khemi       4270    4052  0 19:50 ?        00:00:04 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -parentBuildID 20250707120347 -sandboxingKind 0 -prefsHandle 0:46909 -prefMapHandle 1:270873 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {47d27d9b-fbdd-443e-bf70-739ee119f0b9} -parentPid 4052 -crashReporter 4 -crashHelperPid 4058 -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 6 utility
+khemi       4300    4052  0 19:50 ?        00:00:06 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42094 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {5dcf34fa-dd45-423a-a922-fd71b793f78d} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 9 tab
+khemi       5162    4052  0 19:53 ?        00:00:02 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42189 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {6b73f73f-dd2a-4d1b-a57d-55c93f711615} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 11 tab
+khemi       5270    4052  2 19:53 ?        00:01:28 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42189 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {4b8aad76-edaf-4881-a476-6bf47131faad} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 14 tab
+khemi       6204    1981  1 19:54 ?        00:00:35 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.TH19A3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
+khemi       6214    1766  0 19:54 ?        00:00:00 /usr/libexec/gsd-xsettings
+khemi       6240    1766  0 19:54 ?        00:00:00 /usr/libexec/ibus-x11
+khemi       6246    1981  0 19:54 ?        00:00:01 /usr/libexec/mutter-x11-frames
+root        7073       2  0 19:55 ?        00:00:00 [kworker/3:1-events]
+khemi       7083    2604  0 19:55 pts/0    00:00:15 /nix/store/2wbb6lahjsfpxk85v5kzr7kmgpmglp8n-electron-unwrapped-35.7.1/libexec/electron/electron /nix/store/s7w2h7c8pin289bajcmxgs6wj63bqdcz-obsidian-1.8.10/share/obsidian/app.asar --no-sandbox
+khemi       7108    7083  0 19:55 pts/0    00:00:00 /nix/store/2wbb6lahjsfpxk85v5kzr7kmgpmglp8n-electron-unwrapped-35.7.1/libexec/electron/electron --type=zygote --no-zygote-sandbox --no-sandbox
+khemi       7109    7083  0 19:55 pts/0    00:00:00 /nix/store/2wbb6lahjsfpxk85v5kzr7kmgpmglp8n-electron-unwrapped-35.7.1/libexec/electron/electron --type=zygote --no-sandbox
+khemi       7297    7083  0 19:55 pts/0    00:00:00 /proc/self/exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=24359ef4-dfe2-428e-92b4-ab605abdc3f9,no_channel --user-data-dir=/home/khemi/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,643488024418403510,17281292719192891840,262144 --enable-features=PdfUseShowSaveFilePicker,SharedArrayBuffer --disable-features=EnableOopPrintDrivers,SpareRendererForSitePerProcess --variations-seed-version
+khemi       7301    7083 11 19:55 pts/0    00:06:42 /proc/self/exe --type=renderer --enable-crash-reporter=24359ef4-dfe2-428e-92b4-ab605abdc3f9,no_channel --user-data-dir=/home/khemi/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --app-path=/nix/store/s7w2h7c8pin289bajcmxgs6wj63bqdcz-obsidian-1.8.10/share/obsidian/app.asar --no-sandbox --no-zygote --node-integration-in-worker --no-sandbox --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1755089294881381 --launch-time-ticks=451531159 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,643488024418403510,17281292719192891840,262144 --enable-features=PdfUseShowSaveFilePicker,SharedArrayBuffer --disable-features=EnableOopPrintDrivers,SpareRendererForSitePerProcess --variations-seed-version
+khemi       7326    7108  1 19:55 pts/0    00:00:59 /nix/store/2wbb6lahjsfpxk85v5kzr7kmgpmglp8n-electron-unwrapped-35.7.1/libexec/electron/electron --type=zygote --no-zygote-sandbox --no-sandbox
+root        7982       2  0 19:59 ?        00:00:01 [kworker/2:0-mm_percpu_wq]
+khemi       8588    1981  0 20:03 ?        00:00:10 /usr/share/discord/Discord
+khemi       8611    8588  0 20:03 ?        00:00:00 /usr/share/discord/Discord --type=zygote --no-zygote-sandbox
+khemi       8612    8588  0 20:03 ?        00:00:00 /usr/share/discord/Discord --type=zygote
+khemi       8614    8612  0 20:03 ?        00:00:00 /usr/share/discord/Discord --type=zygote
+khemi       8627    1766  0 20:03 ?        00:00:00 /usr/share/discord/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/khemi/.config/discord/Crashpad --url=https://f.a.k/e --annotation=_productName=discord --annotation=_version=0.0.104 --annotation=lsb-release=Ubuntu 24.04.2 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=35.3.0 --initial-client-fd=40 --shared-client-connection
+khemi       8662    8611  0 20:03 ?        00:00:05 /usr/share/discord/Discord --type=zygote --no-zygote-sandbox
+khemi       8666    8588  0 20:03 ?        00:00:02 /proc/self/exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=8627 --enable-crash-reporter=c7a72a9d-b661-4179-aeca-6e42ffb1f630,no_channel --user-data-dir=/home/khemi/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,3404210208817264723,17602686246042777917,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version
+khemi       8726    8588  6 20:03 ?        00:03:06 /proc/self/exe --type=renderer --crashpad-handler-pid=8627 --enable-crash-reporter=c7a72a9d-b661-4179-aeca-6e42ffb1f630,no_channel --user-data-dir=/home/khemi/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --app-path=/usr/share/discord/resources/app.asar --no-sandbox --no-zygote --enable-blink-features=EnumerateDevices,AudioOutputDevices --autoplay-policy=no-user-gesture-required --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1755089294881382 --launch-time-ticks=940366770 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,3404210208817264723,17602686246042777917,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-node-leakage-in-renderers
+khemi       8774    8588  0 20:03 ?        00:00:00 /proc/self/exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=8627 --enable-crash-reporter=c7a72a9d-b661-4179-aeca-6e42ffb1f630,no_channel --user-data-dir=/home/khemi/.config/discord --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,3404210208817264723,17602686246042777917,262144 --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version
+khemi       8965    1934  0 20:04 ?        00:00:00 /usr/libexec/gvfsd-http --spawner :1.17 /org/gtk/gvfs/exec_spaw/1
+khemi       9001    4052  0 20:04 ?        00:00:02 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42189 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {1987f374-8b37-4bb2-83cc-245a9b7a598e} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 15 tab
+root       10156       2  0 20:20 ?        00:00:03 [kworker/u17:1-hci0]
+root       10237       2  0 20:21 ?        00:00:00 [kworker/2:1-events]
+root       11290       1  0 20:24 ?        00:00:01 /usr/libexec/fwupd/fwupd
+root       11797       2  0 20:28 ?        00:00:00 [kworker/u16:3-i915]
+root       12098       2  0 20:29 ?        00:00:01 [kworker/u17:4-hci0]
+root       12154       2  0 20:33 ?        00:00:00 [kworker/6:2-events]
+root       12155       2  0 20:33 ?        00:00:04 [kworker/4:1-i915-unordered]
+root       12170       2  0 20:34 ?        00:00:00 [kworker/u16:1-events_unbound]
+root       12464       2  0 20:36 ?        00:00:00 [kworker/0:0-events]
+khemi      12535    4052  0 20:37 ?        00:00:03 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42293 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ddd147fe-f60b-45b3-b0f9-709e8bca8e57} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 22 tab
+root       12670       2  0 20:38 ?        00:00:00 [kworker/4:2-events]
+root       31413       2  0 20:40 ?        00:00:00 [kworker/u16:0-events_power_efficient]
+root       31440       2  0 20:41 ?        00:00:00 [kworker/3:0-events]
+root       31837       2  0 20:43 ?        00:00:00 [kworker/2:2-events]
+root       31916       2  0 20:43 ?        00:00:00 [kworker/6:0-i915-unordered]
+root       31955       2  0 20:43 ?        00:00:00 [kworker/5:0-events]
+root       51363       2  0 20:44 ?        00:00:00 [kworker/1:0-events]
+root       70381       2  0 20:45 ?        00:00:00 [kworker/7:0-events]
+root       90015       2  0 20:46 ?        00:00:00 [kworker/u17:0-hci0]
+root       90294       2  0 20:47 ?        00:00:00 [kworker/2:3-events]
+khemi      90306    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90307    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90308    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90309    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90310    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90311    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90312    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90313    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90314    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90315    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90316    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90317    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90318    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90319    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90320    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90321    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90322    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90323    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90324    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90325    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90326    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90327    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90328    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90329    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90330    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90331    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90332    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90333    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90334    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90335    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90336    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90337    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90338    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90339    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90340    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90341    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90342    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90343    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90344    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90345    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90346    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90347    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90348    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90349    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90350    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90351    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90352    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90353    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90354    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90355    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90356    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90357    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90358    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90359    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90360    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90361    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90362    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90363    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90364    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90365    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90366    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90367    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90368    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90369    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90370    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90371    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90372    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90373    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90374    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90375    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90376    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90377    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90378    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90379    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90380    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90381    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90382    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90383    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90384    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90385    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90386    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90387    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90388    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90389    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90390    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90391    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90392    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90393    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90394    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90395    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90396    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90397    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90398    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90399    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90400    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90401    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90402    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90403    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90404    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90405    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90406    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90407    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90408    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90409    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90410    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90411    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90412    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90413    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90414    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90415    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90416    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90417    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90418    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90419    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90420    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90421    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90422    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90423    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90424    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90425    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90426    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90427    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90428    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90429    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90430    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90431    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90432    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90433    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90434    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90435    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90436    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90437    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90438    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90439    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90440    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90441    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90442    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90443    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90444    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90445    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90446    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90447    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90448    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90449    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90450    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90451    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90452    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90453    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90454    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90455    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90456    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90457    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90458    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90459    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90460    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90461    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90462    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90463    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90464    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90465    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90466    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90467    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90468    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90469    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90470    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90471    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90472    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90473    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90474    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90475    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90476    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90477    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90478    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90479    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90480    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90481    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90482    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90483    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90484    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90485    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90486    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90487    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90488    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90489    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90490    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90491    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90492    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90493    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90494    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90495    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90496    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90497    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90498    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90499    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90500    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90501    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90502    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90503    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90504    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90505    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90506    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90507    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90508    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90509    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90510    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90511    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90512    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90513    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90514    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90515    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90516    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90517    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90518    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90519    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90520    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90521    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90522    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90523    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90524    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90525    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90526    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90527    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90528    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90529    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90530    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90531    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90532    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90533    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90534    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90535    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90536    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90537    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90538    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90539    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90540    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90541    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90542    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90543    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90544    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90545    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90546    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90547    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90548    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90549    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90550    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90551    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90552    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90553    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90554    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90555    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90556    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90557    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90558    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90559    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90560    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90561    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90562    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90563    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90564    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90565    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90566    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90567    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90568    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90569    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90570    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90571    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90572    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90573    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90574    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90575    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90576    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90577    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90578    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90579    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90580    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90581    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90582    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90583    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90584    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90585    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90586    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90587    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90588    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90589    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90590    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90591    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90592    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90593    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90594    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90595    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90596    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90597    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90598    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90599    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90600    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90601    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90602    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90603    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90604    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90605    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90606    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90607    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90608    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90609    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90610    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90611    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90612    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90613    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90614    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90615    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90616    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90617    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90618    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90619    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90620    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90621    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90622    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90623    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90624    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90625    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90626    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90627    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90628    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90629    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90630    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90631    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90632    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90633    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90634    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90635    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90636    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90637    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90638    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90639    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90640    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90641    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90642    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90643    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90644    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90645    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90646    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90647    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90648    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90649    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90650    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90651    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90652    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90653    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90654    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90655    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90656    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90657    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90658    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90659    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90660    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90661    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90662    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90663    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90664    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90665    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90666    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90667    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90668    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90669    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90670    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90671    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90672    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90673    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90674    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90675    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90676    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90677    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90678    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90679    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90680    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90681    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90682    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90683    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90684    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90685    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90686    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90687    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90688    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90689    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90690    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90691    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90692    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90693    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90694    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90695    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90696    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90697    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90698    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90699    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90700    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90701    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90702    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90703    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90704    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90705    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90706    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90707    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90708    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90709    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90710    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90711    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90712    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90713    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90714    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90715    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90716    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90717    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90718    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90719    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90720    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90721    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90722    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90723    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90724    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90725    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90726    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90727    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90728    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90729    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90730    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90731    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90732    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90733    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90734    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90735    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90736    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90737    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90738    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90739    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90740    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90741    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90742    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90743    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90744    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90745    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90746    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90747    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90748    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90749    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90750    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90751    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90752    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90753    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90754    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90755    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90756    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90757    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90758    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90759    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90760    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90761    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90762    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90763    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90764    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90765    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90766    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90767    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90768    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90769    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90770    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90771    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90772    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90773    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90774    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90775    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90776    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90777    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90778    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90779    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90780    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90781    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90782    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90783    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90784    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90785    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90786    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90787    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90788    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90789    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90790    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90791    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90792    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90793    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90794    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90795    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90796    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90797    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90798    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90799    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90800    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90801    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90802    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90803    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90804    2604  0 20:47 pts/0    00:00:00 sleep 1000
+khemi      90805    2604  0 20:47 pts/0    00:00:00 sleep 1000
+root       90868       2  0 20:47 ?        00:00:00 [kworker/0:1]
+root       90869       2  0 20:47 ?        00:00:00 [kworker/u17:2-hci0]
+root       90913       2  0 20:48 ?        00:00:00 [kworker/6:1-events]
+root       90968       2  0 20:48 ?        00:00:00 [kworker/5:1-mm_percpu_wq]
+root       91069       2  0 20:48 ?        00:00:00 [kworker/3:2]
+khemi      91085    4052  0 20:48 ?        00:00:00 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42293 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {aff76e3a-0396-44d8-861b-f1707c8f515a} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 25 tab
+khemi      91114    4052  0 20:48 ?        00:00:00 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42293 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {a478a65d-b886-44c0-9fca-6a9adeb51a80} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 26 tab
+root       91235       2  0 20:49 ?        00:00:00 [kworker/4:0-events]
+khemi      91316    4052  0 20:49 ?        00:00:00 /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:42293 -prefMapHandle 1:270873 -jsInitHandle 2:242980 -parentBuildID 20250707120347 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {1c5b74eb-cd08-4001-bb3d-26a69fa7febb} -parentPid 4052 -crashReporter 5 -crashHelperPid 4058 -greomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/omni.ja -appomni /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser/omni.ja -appDir /nix/store/jycqnr8rdfy035ckiwmar4yql406jjh6-firefox-140.0.4/lib/firefox/browser 27 tab
+root       91470       2  0 20:50 ?        00:00:00 [kworker/1:2]
+root      109971       2  0 20:51 ?        00:00:00 [kworker/7:2-events]
+khemi     110057    2604 99 20:51 pts/0    00:00:00 ps -ef
