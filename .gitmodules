@@ -17,3 +17,8 @@
     path = data_models/csgo_model
     url = git@github.com:khemingkapat/csgo_model.git
     ignore = dirty
+
+[submodule "swe/jetswitch"]
+    path = ../jetswitch
+    url = git@github.com:khemingkapat/jetswitch.git
+    ignore = dirty
