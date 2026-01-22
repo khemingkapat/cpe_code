@@ -1,0 +1,19 @@
+Activating project environment from parent directory...
+A,S,T,Z,F,O,R,L,B,
+bfs|true|Any["A", "S", "F", "B"]
+
+A,S,T,Z,F,O,R,L,B,C,P,M,G,U,D,H,V,E,I,N,
+uniform_cost|true|Any["A", "S", "F", "B"]
+
+A,S,F,B,
+dfs|true|Any["A", "S", "F", "B"]
+
+A,S,F,B,
+dls(3)|true|Any["A", "S", "F", "B"]
+
+Searching with depth limit: 0=>A,
+Searching with depth limit: 1=>A,S,T,Z,
+Searching with depth limit: 2=>A,S,F,O,R,T,L,Z,
+Searching with depth limit: 3=>A,S,F,B,
+ids|true|Any["A", "S", "F", "B"]
+
