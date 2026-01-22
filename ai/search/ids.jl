@@ -4,8 +4,10 @@ function ids(graph, mapping, start_node, end_node,depth_limit=100)
     while true
         println("Searching with depth limit: ", depth)
         # Call your existing dls function
-        if dls(graph, mapping, start_node, end_node, depth)
-            return true
+	result_found,path = dls(graph, mapping, start_node, end_node, depth)
+
+        if  result_found
+	    return true,path
         end
         depth += 1
         
@@ -13,6 +15,6 @@ function ids(graph, mapping, start_node, end_node,depth_limit=100)
             break 
         end
     end
-    return false
+    return false,[]
 end
 
