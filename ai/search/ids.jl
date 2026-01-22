@@ -1,5 +1,5 @@
 include("dls.jl")
-function ids(graph, mapping, start_node, end_node)
+function ids(graph, mapping, start_node, end_node,depth_limit=100)
     depth = 0
     while true
         println("Searching with depth limit: ", depth)
@@ -9,9 +9,9 @@ function ids(graph, mapping, start_node, end_node)
         end
         depth += 1
         
-        # if depth > 100 
-        #     break 
-        # end
+        if depth > depth_limit 
+            break 
+        end
     end
     return false
 end
