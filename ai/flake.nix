@@ -20,19 +20,20 @@
         ];
 
         shellHook = ''
-          	  export REPO_ROOT=$(git rev-parse --show-toplevel)
-                    echo "Julia environment loaded!"
-
-                    # Custom function to run Julia with the local project automatically
-                    rj() {
-                      if [[ -f "Project.toml" ]]; then
-                        echo "Activating project environment..."
-                        julia --project=. "$@"
-                      else
-                        echo "No Project.toml found. Running Julia normally..."
-                        julia "$@"
-                      fi
-                    }
+          export REPO_ROOT=$(git rev-parse --show-toplevel)
+          echo "Julia environment loaded!"
+          rj() {
+            if [[ -f "Project.toml" ]]; then
+              echo "Activating project environment from current directory..."
+              julia --project=. "$@"
+            elif [[ -f "../Project.toml" ]]; then
+              echo "Activating project environment from parent directory..."
+              julia --project=.. "$@"
+            else
+              echo "No Project.toml found. Running Julia normally..."
+              julia "$@"
+            fi
+          }
         '';
       };
     };
