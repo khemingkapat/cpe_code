@@ -4,6 +4,8 @@ include("dls.jl")
 include("ids.jl")
 include("uniform_cost.jl")
 include("bfs.jl")
+include("state_space.jl")
+include("visualize.jl")
 
 graph, mapping = create_graph()
 
@@ -26,3 +28,8 @@ println()
 result,path = ids(graph, mapping, "A", "B")
 println("ids","|",result,"|",path)
 println()
+
+state_space,node_map = create_state_space()
+
+sg, sg_labels, sg_edge_labels, sg_rev_map = prepare_graph(state_space, node_map)
+write_mermaid(sg,sg_rev_map)
