@@ -17,7 +17,7 @@ end
 function plot_state_space(sg, labels, edge_labels, rev_node_map; root_state=(2, 2, 0))
     root_idx = findfirst(x -> rev_node_map[x] == root_state, 1:nv(sg))
 
-    return graphplot(sg,
+    p = graphplot(sg,
         names = labels,
         edgelabel = edge_labels,
         method = :layered,
@@ -29,6 +29,8 @@ function plot_state_space(sg, labels, edge_labels, rev_node_map; root_state=(2, 
         size = (1200, 1200),
         self_loop_size = 0.2
     )
+    savefig("figure.png")
+    return p
 end
 
 function write_mermaid(graph,rev_node_map)

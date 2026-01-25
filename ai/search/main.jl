@@ -32,4 +32,5 @@ println()
 state_space,node_map = create_state_space()
 
 sg, sg_labels, sg_edge_labels, sg_rev_map = prepare_graph(state_space, node_map)
+plot_state_space(sg,sg_labels,sg_edge_labels,sg_rev_map)
 write_mermaid(sg,sg_rev_map)
