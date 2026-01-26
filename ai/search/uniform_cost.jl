@@ -39,7 +39,7 @@ function uniform_cost(graph,mapping,start_node,end_node)
 	end
 	children = neighbors(graph, current_node)
 	unvisited_children = filter(child -> !visited[child], children)
-	sort!(unvisited_children, by = child -> (cost[child], child))
+	sort!(unvisited_children, by = child -> graph.weights[current_node,child])
 
 	for child in unvisited_children
 	    if !haskey(parent, child)

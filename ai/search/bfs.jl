@@ -35,6 +35,8 @@ function bfs(graph, mapping, start_node, end_node)
 
         children = neighbors(graph, current_node)
         unvisited_children = filter(child -> !visited[child], children)
+	sort!(unvisited_children, by = child -> (graph.weights[current_node,child],child))
+	
 
 	for child in unvisited_children
 	    if !haskey(parent, child)

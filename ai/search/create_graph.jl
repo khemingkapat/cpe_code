@@ -10,8 +10,31 @@ function create_graph()
         "Eforie", "Vaslui", "Iasi", "Neamt"
     ]
 
+    city_north_south_ranks = Dict(
+	"Neamt"          => 2,
+	"Oradea"         => 1,
+	"Iasi"           => 4,
+	"Zerind"         => 3,
+	"Arad"           => 5,
+	"Sibiu"          => 6,
+	"Vaslui"         => 8,
+	"Fagaras"        => 7,
+	"Rimnicu Vilcea" => 9,
+	"Timisoara"      => 10,
+	"Urziceni"       => 13,
+	"Hirsova"        => 14,
+	"Lugoj"          => 11,
+	"Pitesti"        => 12,
+	"Bucharest"      => 16,
+	"Mehadia"        => 15,
+	"Craiova"        => 18,
+	"Dobreta"        => 17,
+	"Eforie"         => 19,
+	"Giurgiu"        => 20
+    )
+
     # 1. Sort alphabetically and take the first letter
-    sorted_cities = sort(full_names)
+    sorted_cities = sort(full_names,by = city -> city_north_south_ranks[city])
     
     # 2. Create the index using only the first letter
     # This creates a Dict like {"A" => 1, "B" => 2, ...}

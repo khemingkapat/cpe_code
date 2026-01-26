@@ -17,3 +17,43 @@ Searching with depth limit: 2=>A,S,F,O,R,T,L,Z,
 Searching with depth limit: 3=>A,S,F,B,
 ids|true|Any["A", "S", "F", "B"]
 
+Activating project environment from parent directory...
+A,Z,T,S,O,L,R,F,M,P,C,B,
+bfs|true|Any["A", "S", "F", "B"]
+
+A,Z,T,S,O,L,R,F,M,P,C,B,D,G,U,H,V,E,I,N,
+uniform_cost|true|Any["A", "S", "F", "B"]
+
+A,Z,O,S,R,P,B,
+dfs|true|Any["A", "S", "R", "P", "B"]
+
+A,Z,O,S,T,L,M,S,R,P,C,F,B,
+dls(3)|true|Any["A", "S", "F", "B"]
+
+Searching with depth limit: 0=>A,
+Searching with depth limit: 1=>A,Z,T,S,
+Searching with depth limit: 2=>A,Z,O,T,L,S,R,F,
+Searching with depth limit: 3=>A,Z,O,S,T,L,M,S,R,P,C,F,B,
+ids|true|Any["A", "S", "F", "B"]
+
+Activating project environment from parent directory...
+A,Z,T,S,O,L,R,F,M,P,C,B,
+bfs|true|Any["A", "S", "F", "B"]
+
+A,Z,T,S,O,L,R,F,M,P,C,B,D,G,U,H,V,E,I,N,
+uniform_cost|true|Any["A", "S", "F", "B"]
+
+A,Z,O,S,R,P,B,
+dfs|true|Any["A", "S", "R", "P", "B"]
+
+A,Z,O,S,T,L,M,
+dls(3)|false|Any[]
+
+Searching with depth limit: 0=>A,
+Searching with depth limit: 1=>A,Z,T,S,
+Searching with depth limit: 2=>A,Z,O,T,L,S,R,F,
+Searching with depth limit: 3=>A,Z,O,S,T,L,M,
+Searching with depth limit: 4=>A,Z,O,S,R,F,T,L,M,D,
+Searching with depth limit: 5=>A,Z,O,S,R,P,C,F,B,
+ids|true|Any["A", "S", "F", "B"]
+
