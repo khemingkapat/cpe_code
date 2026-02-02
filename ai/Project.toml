@@ -1,7 +1,7 @@
 name = "ai"
 
-
 [deps]
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
 GraphRecipes = "bd48cda9-67a9-57be-86fa-5b3c104eda73"
 Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
 LanguageServer = "2b0e0bc5-e4fd-59b4-8912-456d1b03d8d7"
