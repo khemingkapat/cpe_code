@@ -1,0 +1,31 @@
+S,A,B,C,E,G1,
+bfs|true|Any["S", "A", "G1"]
+
+S,A,E,G1,
+dfs|true|Any["S", "A", "G1"]
+
+S,A,B,C,E,G1,
+uniform_cost|true|Any["S", "A", "G1"]
+
+Searching with depth limit: 0=>S,
+Searching with depth limit: 1=>S,A,B,C,
+Searching with depth limit: 2=>S,A,E,G1,
+ids|true|Any["S", "A", "G1"]
+
+S B C G3 
+Goal Found!
+gbfs|true|Any["S", "C", "G3"]
+
+S,B,C,F,D,G2,
+a star|true|Any["S", "B", "F", "D", "G2"]
+
+Checking with heuristic cutoff: 0
+Checking with heuristic cutoff: 1
+Checking with heuristic cutoff: 3
+Checking with heuristic cutoff: 4
+Checking with heuristic cutoff: 5
+Checking with heuristic cutoff: 8
+S,B,C,F,D,G2,
+Path found at cutoff 8
+ida star|true|Any["S", "B", "F", "D", "G2"]
+

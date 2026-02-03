@@ -56,3 +56,59 @@ function greedy_best_first_search(map, start, goal)
     end
     return false, []
 end
+
+function greedy_best_first_search_graph(graph, mapping, heuristics, start_node, end_nodes)
+    # 1. Setup indices and mappings
+    start_idx = mapping[start_node]
+    end_indices = Set(mapping[node] for node in end_nodes)
+    reverse_mapping = Dict(v => k for (k, v) in mapping)
+    
+    # 2. Priority Queue: (Heuristic, Alphabetical_Order)
+    # Using the name (String) for tie-breaking ensures alphabetical order
+    pq = PriorityQueue{Int, Tuple{Int, String}}()
+    
+    visited = Set{Int}()
+    parent = Dict{Int, Int}()
+    
+    # 3. Initialize
+    # Priority is (h(n), "NodeName")
+    enqueue!(pq, start_idx => (heuristics[start_idx], start_node))
+    push!(visited, start_idx)
+
+    while !isempty(pq)
+        current = dequeue!(pq)
+        current_name = reverse_mapping[current]
+        print(current_name, " ")
+
+        # 4. Goal Check
+        if current in end_indices
+            path = []
+            curr = current
+            while curr != start_idx
+                pushfirst!(path, reverse_mapping[curr])
+                curr = parent[curr]
+            end
+            pushfirst!(path, reverse_mapping[start_idx])
+            println("\nGoal Found!")
+            return true, path
+        end
+
+        # 5. Expand Neighbors
+        # neighbors() returns children nodes from the graph
+        for neighbor in neighbors(graph, current)
+            if !(neighbor in visited)
+                push!(visited, neighbor)
+                parent[neighbor] = current
+                
+                neighbor_name = reverse_mapping[neighbor]
+                h_val = heuristics[neighbor]
+                
+                # Priority: Smaller h(n) first, then alphabetical name
+                enqueue!(pq, neighbor => (h_val, neighbor_name))
+            end
+        end
+    end
+    
+    println("\nNo path found.")
+    return false, []
+end
