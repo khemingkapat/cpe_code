@@ -2,9 +2,6 @@
 
 function a_star(map, start, goal)
     rows, cols = size(map)
-    g_map = create_blank_map(size(map)[1])
-    add_manhattan!(g_map,(start))
-    map = map + g_map
     pq = PriorityQueue{Tuple{Int,Int}, Tuple{Float64, Int, Int}}()
     visited = Set{Tuple{Int,Int}}()
     parent = Dict{Tuple{Int,Int}, Tuple{Int,Int}}()
