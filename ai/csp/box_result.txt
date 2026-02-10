@@ -1,0 +1,47 @@
+Activating project environment from parent directory...
+FORWARD CHECKING
+current at 1
+	try 1 to be G and check with 3
+	try 1 to be G and check with 6
+assgining 1 to be G
+current at 3
+	try 3 to be S and check with 4
+	try 3 to be S and check with 5
+	try 3 to be S and check with 6
+assgining 3 to be S
+current at 6
+assgining 6 to be B
+current at 4
+	try 4 to be G and check with 2
+	try 4 to be G and check with 5
+assgining 4 to be G
+current at 5
+	try 5 to be B and check with 2
+assgining 5 to be B
+current at 2
+assgining 2 to be S
+true
+BACKTRACKING
+Step 1: Node 1 assigned G (Neighbors use: String[])
+Step 2: Node 2 assigned G (Neighbors use: String[])
+Step 3: Node 3 assigned S (Neighbors use: ["G"])
+Step 4: Node 4 assigned B (Neighbors use: ["S", "G"])
+Step 5: Node 5 has NO options. Backtracking from index 5...
+  Returning to Node 4 (previous value was B)
+Step 6: Node 4 has NO options. Backtracking from index 4...
+  Returning to Node 3 (previous value was S)
+Step 7: Node 3 assigned B (Neighbors use: ["G"])
+Step 8: Node 4 assigned S (Neighbors use: ["B", "G"])
+Step 9: Node 5 has NO options. Backtracking from index 5...
+  Returning to Node 4 (previous value was S)
+Step 10: Node 4 has NO options. Backtracking from index 4...
+  Returning to Node 3 (previous value was B)
+Step 11: Node 3 has NO options. Backtracking from index 3...
+  Returning to Node 2 (previous value was G)
+Step 12: Node 2 assigned S (Neighbors use: String[])
+Step 13: Node 3 assigned S (Neighbors use: ["G"])
+Step 14: Node 4 assigned G (Neighbors use: ["S"])
+Step 15: Node 5 assigned B (Neighbors use: ["S", "G"])
+Step 16: Node 6 assigned B (Neighbors use: ["S", "G"])
+Search successful in 16 steps.
+true
