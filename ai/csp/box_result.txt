@@ -10,14 +10,15 @@ current at 3
 	try 3 to be S and check with 6
 assgining 3 to be S
 current at 6
+	try 6 to be B and check with 5
 assgining 6 to be B
-current at 4
-	try 4 to be G and check with 2
-	try 4 to be G and check with 5
-assgining 4 to be G
 current at 5
-	try 5 to be B and check with 2
-assgining 5 to be B
+	try 5 to be G and check with 2
+	try 5 to be G and check with 4
+assgining 5 to be G
+current at 4
+	try 4 to be B and check with 2
+assgining 4 to be B
 current at 2
 assgining 2 to be S
 true
@@ -42,6 +43,12 @@ Step 12: Node 2 assigned S (Neighbors use: String[])
 Step 13: Node 3 assigned S (Neighbors use: ["G"])
 Step 14: Node 4 assigned G (Neighbors use: ["S"])
 Step 15: Node 5 assigned B (Neighbors use: ["S", "G"])
-Step 16: Node 6 assigned B (Neighbors use: ["S", "G"])
-Search successful in 16 steps.
+Step 16: Node 6 has NO options. Backtracking from index 6...
+  Returning to Node 5 (previous value was B)
+Step 17: Node 5 has NO options. Backtracking from index 5...
+  Returning to Node 4 (previous value was G)
+Step 18: Node 4 assigned B (Neighbors use: ["S"])
+Step 19: Node 5 assigned G (Neighbors use: ["B", "S"])
+Step 20: Node 6 assigned B (Neighbors use: ["S", "G"])
+Search successful in 20 steps.
 true

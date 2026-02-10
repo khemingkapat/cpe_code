@@ -12,6 +12,7 @@ function create_adjacency_graph()
     add_edge!(g,3,5)
     add_edge!(g,3,6)
     add_edge!(g,4,5)
+    add_edge!(g,5,6)
 
     return g
 end
