@@ -1,0 +1,56 @@
+Activating project environment from parent directory...
+current at 2
+	try 2 to be 1 and check with 1
+	try 2 to be 1 and check with 4
+	try 2 to be 1 and check with 5
+	try 2 to be 1 and check with 10
+assgining 2 to be 1
+current at 1
+	try 1 to be 3 and check with 4
+	try 1 to be 3 and check with 5
+	try 1 to be 3 and check with 9
+	try 1 to be 3 and check with 13
+assgining 1 to be 3
+current at 4
+	try 4 to be 4 and check with 7
+	try 4 to be 4 and check with 8
+	try 4 to be 4 and check with 12
+	try 4 to be 4 and check with 16
+assgining 4 to be 4
+current at 5
+	try 5 to be 2 and check with 7
+	try 5 to be 2 and check with 8
+	try 5 to be 2 and check with 9
+	try 5 to be 2 and check with 13
+assgining 5 to be 2
+current at 9
+	try 9 to be 1 and check with 10
+	try 9 to be 1 and check with 12
+	try 9 to be 1 and check with 13
+assgining 9 to be 1
+current at 10
+	try 10 to be 2 and check with 12
+	try 10 to be 2 and check with 13
+assgining 10 to be 2
+current at 12
+	try 12 to be 3 and check with 8
+	try 12 to be 3 and check with 15
+	try 12 to be 3 and check with 16
+assgining 12 to be 3
+current at 8
+	try 8 to be 1 and check with 7
+	try 8 to be 1 and check with 16
+assgining 8 to be 1
+current at 7
+	try 7 to be 3 and check with 15
+assgining 7 to be 3
+current at 13
+	try 13 to be 4 and check with 15
+	try 13 to be 4 and check with 16
+assgining 13 to be 4
+current at 15
+	try 15 to be 1 and check with 16
+assgining 15 to be 1
+current at 16
+assgining 16 to be 2
+Dict{Int64, Union{Nothing, String}}(5 => "2", 16 => "2", 7 => "3", 12 => "3", 8 => "1", 1 => "3", 4 => "4", 6 => "4", 13 => "4", 2 => "1", 10 => "2", 11 => "4", 9 => "1", 15 => "1", 14 => "3", 3 => "2")
