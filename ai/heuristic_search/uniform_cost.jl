@@ -1,28 +1,35 @@
-using Graphs,SimpleWeightedGraphs
+using Graphs, SimpleWeightedGraphs
+using DataStructures
+
 function uniform_cost(graph, mapping, start_node, end_nodes)
     start_idx = mapping[start_node]
     end_indices = Set(mapping[node] for node in end_nodes)
 
     if start_idx in end_indices
-	return true, []
+        return true, [start_node]
     end
+
     reverse_mapping = Dict(v => k for (k, v) in mapping)
-
+    
+    pq = PriorityQueue{Int,Int}()
+    pq[start_idx] = 0
+    
+    costs = Dict(idx => typemax(Int) for idx in values(mapping))
+    costs[start_idx] = 0
+    
     visited = Dict(idx => false for idx in values(mapping))
-    cost = Dict(idx => Inf for idx in values(mapping))
-    cost[start_idx] = 0
+    parent = Dict{Int,Int}()
 
-    parent = Dict{Int,Int}() 
-    queue = [start_idx]
-    optimal_path = []
-    optimal_cost = Inf
+    while !isempty(pq)
+        current_node, current_total_cost = dequeue_pair!(pq)
 
-    while !isempty(queue)
-        current_node = popfirst!(queue)
-	if visited[current_node]
-	    continue
-	end
+        if visited[current_node]
+            continue
+        end
+        visited[current_node] = true
 	print(reverse_mapping[current_node], ",")
+
+        # Check if the popped node is ANY of our goal nodes
         if current_node in end_indices
             path = []
             curr = current_node
@@ -31,32 +38,26 @@ function uniform_cost(graph, mapping, start_node, end_nodes)
                 curr = parent[curr]
             end
             pushfirst!(path, reverse_mapping[start_idx])
-            println()
+	    println()
             return true, path
         end
-	children = neighbors(graph, current_node)
-	unvisited_children = filter(child -> !visited[child], children)
-	sort!(unvisited_children, by=child -> graph.weights[current_node,child])
 
-	for child in unvisited_children
-	    if !haskey(parent, child)
-		parent[child] = current_node
-	    end
+        for neighbor in neighbors(graph, current_node)
+            if visited[neighbor]
+                continue
+            end
 
-	    current_parent = parent[child]
-	    current_cost = cost[current_parent] + get_weight(graph, current_parent, child)
-	    
-	    if current_cost < cost[child]
-		cost[child] = current_cost
-	    end
+            edge_weight = Int(get_weight(graph, current_node, neighbor))
+            new_path_cost = current_total_cost + edge_weight
 
-
-	end
-	append!(queue, unvisited_children)
-	visited[current_node] = true
+            if new_path_cost < costs[neighbor]
+                costs[neighbor] = new_path_cost
+                parent[neighbor] = current_node 
+                pq[neighbor] = new_path_cost
+            end
+        end
     end
-    println()
-    return !isempty(optimal_path), optimal_path
-    
 
+    println()
+    return false, []
 end
