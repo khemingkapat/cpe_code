@@ -27,14 +27,14 @@ result, path = ids(graph, mapping, "S", ["G1","G2","G3"])
 println("ids","|",result,"|",path)
 println()
 
-result, path = greedy_best_first_search_graph(graph, mapping, h_values,"S", ["G1","G2","G3"])
+result, path = greedy_best_first_search_graph(graph, mapping, h_values, "S", ["G1","G2","G3"])
 println("gbfs","|",result,"|",path)
 println()
 
-result, path = a_star_graph(graph, mapping, h_values,"S", ["G1","G2","G3"])
+result, path = a_star_graph(graph, mapping, h_values, "S", ["G1","G2","G3"])
 println("a star","|",result,"|",path)
 println()
 
-result, path = ida_star_graph(graph, mapping, h_values,"S", ["G1","G2","G3"])
+result, path = ida_star_graph(graph, mapping, h_values, "S", ["G1","G2","G3"])
 println("ida star","|",result,"|",path)
 println()
