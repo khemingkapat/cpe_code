@@ -98,38 +98,57 @@ function forward_checking(g,vars,pre_assign=nothing)
             pq[n] = (length(domains[n]), n)
         end
     end
+    stack = Int[]
     
+    while !isempty(pq) || !isempty(stack)
+	if isempty(pq) return assign end
 
-    while !isempty(pq)
-	current = dequeue!(pq)
-	domains[current] = setdiff(domains[current],Set([assign[current]]))
-	sorted_domain = sort(collect(domains[current]), by = v -> findfirst(==(v), vars))
-
-
-	color_idx = 1
-	neighbor_idx = 1
+	current = peek(pq).first # Look at the best node
+	available_options = sort(collect(domains[current]), by=v -> findfirst(==(v), vars))
 	current_neighbors = [n for n in neighbors(g, current) if isnothing(assign[n])]
-	current_color = sorted_domain[color_idx]
+
+	found_valid = false
 	println("current at $current")
-	while (neighbor_idx <= length(current_neighbors)) && (color_idx <= length(sorted_domain))
-	    neighbor_domain = setdiff(domains[current_neighbors[neighbor_idx]],Set([current_color]))
-	    println("\ttry $current to be $current_color and check with $(current_neighbors[neighbor_idx])")
-
-	    if isempty(neighbor_domain)
-		color_idx += 1
-		continue
+	for opt in available_options
+	    is_valid = true
+	    for nb in current_neighbors
+                if !isnothing(assign[nb])
+		    continue
+                end
+		neighbor_domain = setdiff(domains[nb],Set([opt]))
+		println("\ttry $current to be $opt and check with $nb")
+		if isempty(neighbor_domain)
+		    is_valid=false
+		    break
+		end
+            end
+	    if is_valid
+		found_valid = true
+		assign[current] = opt
+		dequeue!(pq)
+		for neighbor in current_neighbors
+		    domains[neighbor] = setdiff(domains[neighbor],Set([opt]))
+		    pq[neighbor] = (length(domains[neighbor]),neighbor)
+		end
+		push!(stack,current)
+		break
+	    else
+		delete!(domains[current], opt)
 	    end
-
-	    neighbor_idx += 1
 	end
-
-	for neighbor in current_neighbors
-	    domains[neighbor] = setdiff(domains[neighbor],Set([current_color]))
-	    pq[neighbor] = (length(domains[neighbor]),neighbor)
-	end
-
-	println("assgining $current to be $current_color")
-	assign[current] = current_color
+	if !found_valid
+            if isempty(stack) return nothing end # Totally stuck
+            prev_node = pop!(stack)
+	    prev_opt = assign[prev_node]
+            println("Backtracking from $prev_node...")
+	    for neighbor in neighbors(g,current)
+		push!(domains[neighbor], prev_opt)
+		pq[neighbor] = (length(domains[neighbor]), neighbor)
+	    end
+            assign[prev_node] = nothing
+            delete!(domains[prev_node], prev_opt)
+            pq[prev_node] = length(domains[prev_node])
+        end
 
     end
     return assign
