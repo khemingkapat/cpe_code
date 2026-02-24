@@ -41,12 +41,23 @@ function map_node_levels(graph, root_id=1)
     
     return node_levels
 end
-function minimax(g, node_map, id_to_state)
+
+function assign_leaf_nodes(g,id_to_state)
+    leaves = find_leaf_nodes(g)
+    node_values = Dict()
+    for node in leaves
+	state_info = id_to_state[node]
+	player = state_info[end-1] 
+	val = (player == :A) ? -1 : 1
+	node_values[node] = val
+
+    end
+    return node_values
+end
+function minimax(g, node_map, id_to_state, node_values)
     root_id = find_root_node(g)
     node_levels = map_node_levels(g, root_id)
     leaves = find_leaf_nodes(g)
-
-    node_values = Dict{Int, Int}()
     new_id_to_state = Dict{Int, Tuple}()
     
     all_nodes = collect(vertices(g))
@@ -55,11 +66,8 @@ function minimax(g, node_map, id_to_state)
     for curr_node in all_nodes
         state_info = id_to_state[curr_node]
         
-        if curr_node in leaves
-            player = state_info[end-1] 
-            val = (player == :A) ? -1 : 1
-            node_values[curr_node] = val
-        else
+        if !(curr_node in leaves)
+            # Only calculate children values for internal nodes
             children_values = [node_values[child] for child in outneighbors(g, curr_node)]
             
             if node_levels[curr_node] % 2 == 0
@@ -68,10 +76,13 @@ function minimax(g, node_map, id_to_state)
                 val = minimum(children_values)
             end
             node_values[curr_node] = val
+        else
+            # For leaves, just use the value already in node_values
+            val = node_values[curr_node]
         end
 
-        
-        new_id_to_state[curr_node] = (state_info[1:end-1]..., val, state_info[end])
+        # This MUST be outside the IF but inside the FOR loop
+	new_id_to_state[curr_node] = (state_info,val)
     end
 
     return node_values, new_id_to_state

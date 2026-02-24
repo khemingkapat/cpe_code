@@ -3,11 +3,11 @@ include("minimax.jl")
 
 function alpha_beta_pruning(g, id_to_state)
     root_id = find_root_node(g)
-    node_levels = map_node_levels(g,root_id)
+    node_levels = map_node_levels(g, root_id)
 
     stack = [(root_id, -Inf, Inf, 1, 0.0)]
     
-    results = Dict{Int, Float64}()
+    results = Dict{Int,Float64}()
 
     while !isempty(stack)
         node_id, alpha, beta, child_idx, best_val = stack[end]
@@ -17,7 +17,7 @@ function alpha_beta_pruning(g, id_to_state)
 	println("at node $node_id, and children are $(children)")
 
         if isempty(children)
-            results[node_id] = Float64(id_to_state[node_id][end-1])
+            results[node_id] = Float64(id_to_state[node_id][end])
             pop!(stack)
             continue
         end
@@ -50,7 +50,7 @@ function alpha_beta_pruning(g, id_to_state)
                 # ALPHA-BETA PRUNING CUTOFF
                 if alpha >= beta
                     results[node_id] = best_val
-                end
+            end
             else
                 # Push the child onto the stack to visit it (DFS order)
                 push!(stack, (child_id, alpha, beta, 1, 0.0))
