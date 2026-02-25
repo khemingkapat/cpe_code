@@ -48,7 +48,7 @@ function assign_leaf_nodes(g,id_to_state)
     for node in leaves
 	state_info = id_to_state[node]
 	player = state_info[end-1] 
-	val = (player == :A) ? -1 : 1
+	val = (player == :A) ? 1 : -1
 	node_values[node] = val
 
     end
