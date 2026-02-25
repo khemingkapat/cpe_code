@@ -1,0 +1,195 @@
+graph TD
+	N1["(6, :A, 1)"]
+	N2["(5, :B, -1)"]
+	N3["(4, :B, -1)"]
+	N4["(3, :B, -1)"]
+	N5["(2, :B, -1)"]
+	N6["(1, :B, 1)"]
+	N7["(0, :B, -1)"]
+	N8["(4, :A, 1)"]
+	N9["(3, :A, 1)"]
+	N10["(2, :A, 1)"]
+	N11["(1, :A, -1)"]
+	N12["(0, :A, 1)"]
+	N13["(3, :A, 1)"]
+	N14["(2, :A, 1)"]
+	N15["(1, :A, -1)"]
+	N16["(0, :A, 1)"]
+	N17["(2, :A, 1)"]
+	N18["(1, :A, -1)"]
+	N19["(0, :A, 1)"]
+	N20["(1, :A, -1)"]
+	N21["(0, :A, 1)"]
+	N22["(0, :A, 1)"]
+	N23["(3, :B, -1)"]
+	N24["(2, :B, -1)"]
+	N25["(1, :B, 1)"]
+	N26["(0, :B, -1)"]
+	N27["(2, :B, -1)"]
+	N28["(1, :B, 1)"]
+	N29["(0, :B, -1)"]
+	N30["(1, :B, 1)"]
+	N31["(0, :B, -1)"]
+	N32["(0, :B, -1)"]
+	N33["(2, :B, -1)"]
+	N34["(1, :B, 1)"]
+	N35["(0, :B, -1)"]
+	N36["(1, :B, 1)"]
+	N37["(0, :B, -1)"]
+	N38["(0, :B, -1)"]
+	N39["(1, :B, 1)"]
+	N40["(0, :B, -1)"]
+	N41["(0, :B, -1)"]
+	N42["(0, :B, -1)"]
+	N43["(2, :A, 1)"]
+	N44["(1, :A, -1)"]
+	N45["(0, :A, 1)"]
+	N46["(1, :A, -1)"]
+	N47["(0, :A, 1)"]
+	N48["(0, :A, 1)"]
+	N49["(1, :A, -1)"]
+	N50["(0, :A, 1)"]
+	N51["(0, :A, 1)"]
+	N52["(0, :A, 1)"]
+	N53["(1, :A, -1)"]
+	N54["(0, :A, 1)"]
+	N55["(0, :A, 1)"]
+	N56["(0, :A, 1)"]
+	N57["(0, :A, 1)"]
+	N58["(1, :B, 1)"]
+	N59["(0, :B, -1)"]
+	N60["(0, :B, -1)"]
+	N61["(0, :B, -1)"]
+	N62["(0, :B, -1)"]
+	N63["(0, :B, -1)"]
+	N64["(0, :A, 1)"]
+	N1 --> N2
+	N1 --> N3
+	N1 --> N4
+	N1 --> N5
+	N1 --> N6
+	N1 --> N7
+	N2 --> N8
+	N2 --> N9
+	N2 --> N10
+	N2 --> N11
+	N2 --> N12
+	N3 --> N13
+	N3 --> N14
+	N3 --> N15
+	N3 --> N16
+	N4 --> N17
+	N4 --> N18
+	N4 --> N19
+	N5 --> N20
+	N5 --> N21
+	N6 --> N22
+	N8 --> N23
+	N8 --> N24
+	N8 --> N25
+	N8 --> N26
+	N9 --> N27
+	N9 --> N28
+	N9 --> N29
+	N10 --> N30
+	N10 --> N31
+	N11 --> N32
+	N13 --> N33
+	N13 --> N34
+	N13 --> N35
+	N14 --> N36
+	N14 --> N37
+	N15 --> N38
+	N17 --> N39
+	N17 --> N40
+	N18 --> N41
+	N20 --> N42
+	N23 --> N43
+	N23 --> N44
+	N23 --> N45
+	N24 --> N46
+	N24 --> N47
+	N25 --> N48
+	N27 --> N49
+	N27 --> N50
+	N28 --> N51
+	N30 --> N52
+	N33 --> N53
+	N33 --> N54
+	N34 --> N55
+	N36 --> N56
+	N39 --> N57
+	N43 --> N58
+	N43 --> N59
+	N44 --> N60
+	N46 --> N61
+	N49 --> N62
+	N53 --> N63
+	N58 --> N64
+
+at 1 (MAX) with children ["2", "3", "4", "5", "6", "7"]
+at 2 (MIN) with children ["8", "9", "10", "11", "12"]
+at 8 (MAX) with children ["23", "24", "25", "26"]
+at 23 (MIN) with children ["43", "44", "45"]
+at 43 (MAX) with children ["58", "59"]
+at 58 (MIN) with children ["64"]
+Leaf Node 64: value = 1
+Leaf Node 59: value = -1
+at 44 (MAX) with children ["60"]
+Leaf Node 60: value = -1
+Leaf Node 45: value = 1
+at 24 (MIN) with children ["46", "47"]
+at 46 (MAX) with children ["61"]
+Leaf Node 61: value = -1
+  Pruning at child 46 of node 24
+at 25 (MIN) with children ["48"]
+Leaf Node 48: value = 1
+Leaf Node 26: value = -1
+at 9 (MAX) with children ["27", "28", "29"]
+at 27 (MIN) with children ["49", "50"]
+at 49 (MAX) with children ["62"]
+Leaf Node 62: value = -1
+Leaf Node 50: value = 1
+at 28 (MIN) with children ["51"]
+Leaf Node 51: value = 1
+  Pruning at child 28 of node 9
+at 10 (MAX) with children ["30", "31"]
+at 30 (MIN) with children ["52"]
+Leaf Node 52: value = 1
+  Pruning at child 30 of node 10
+at 11 (MAX) with children ["32"]
+Leaf Node 32: value = -1
+Leaf Node 12: value = 1
+at 3 (MIN) with children ["13", "14", "15", "16"]
+at 13 (MAX) with children ["33", "34", "35"]
+at 33 (MIN) with children ["53", "54"]
+at 53 (MAX) with children ["63"]
+Leaf Node 63: value = -1
+  Pruning at child 53 of node 33
+at 34 (MIN) with children ["55"]
+Leaf Node 55: value = 1
+Leaf Node 35: value = -1
+at 14 (MAX) with children ["36", "37"]
+at 36 (MIN) with children ["56"]
+Leaf Node 56: value = 1
+  Pruning at child 36 of node 14
+at 15 (MAX) with children ["38"]
+Leaf Node 38: value = -1
+  Pruning at child 15 of node 3
+at 4 (MIN) with children ["17", "18", "19"]
+at 17 (MAX) with children ["39", "40"]
+at 39 (MIN) with children ["57"]
+Leaf Node 57: value = 1
+Leaf Node 40: value = -1
+at 18 (MAX) with children ["41"]
+Leaf Node 41: value = -1
+  Pruning at child 18 of node 4
+at 5 (MIN) with children ["20", "21"]
+at 20 (MAX) with children ["42"]
+Leaf Node 42: value = -1
+  Pruning at child 20 of node 5
+at 6 (MIN) with children ["22"]
+Leaf Node 22: value = 1
+Leaf Node 7: value = -1
+
+final score of root is 1.0
