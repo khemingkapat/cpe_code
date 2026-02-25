@@ -1,4 +1,3 @@
-Activating project environment from parent directory...
 graph TD
 	N1["(A, 7)"]
 	N2["(B, 3)"]
@@ -25,7 +24,6 @@ graph TD
 	N23["(W, 5)"]
 	N24["(X, 9)"]
 	N25["(Y, 8)"]
-
 	N1 --> N2
 	N1 --> N3
 	N1 --> N4
@@ -50,6 +48,7 @@ graph TD
 	N10 --> N23
 	N11 --> N24
 	N11 --> N25
+
 at A (MAX) with children ["B", "C", "D"]
 at B (MIN) with children ["E", "F", "G"]
 at E (MAX) with children ["L", "M"]
