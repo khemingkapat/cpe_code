@@ -90,8 +90,14 @@ $$
 ## Refutation Process
 $$
 \begin{align}
-5. & \neg Chips(c_2) \lor \neg Cereals(Cheerios) && (2, 4, \{c_3 = Cheerios\}) \\ 6. & \neg Chips(c_2) && (5, \text{Fact: Cereals(Cheerios)}) \\ 7. & \text{False} && (6, \text{Fact: Chips(Lay's)}, \{c_2 = Lay's\}) \\
-6. & \neg Cheaper(x, y) \lor \neg Cheaper(y, Cheerios) && (3, 4, \{z = Cheerios\}) \\ 9. & \neg Cheaper(x, Lay's) && (8, \text{Step 7 result}, \{y = Lay's\}) \\ 10. & \neg Soda(x) \lor \neg Chips(Lay's) && (9, 1, \{c_1 = Lay's, s_1 = x\}) \\ 11. & \neg Soda(x) && (10, \text{Fact: Chips(Lay's)}) \\ 12. & \text{False} && (11, \text{Fact: Soda(Zero)}, \{x = Zero\})
+5. & \neg Chips(c_2) \lor \neg Cereals(Cheerios) && (2, 4, \{c_3 = Cheerios\}) \\ 
+6. & \neg Chips(c_2) && (5, \text{Fact: Cereals(Cheerios)}) \\ 
+7. & \text{False} && (6, \text{Fact: Chips(Lay's)}, \{c_2 = Lay's\}) \\
+8. & \neg Cheaper(x, y) \lor \neg Cheaper(y, Cheerios) && (3, 4, \{z = Cheerios\}) \\ 
+9. & \neg Cheaper(x, Lay's) && (8, \text{Step 7 result}, \{y = Lay's\}) \\ 
+10. & \neg Soda(x) \lor \neg Chips(Lay's) && (9, 1, \{c_1 = Lay's, s_1 = x\}) \\ 
+11. & \neg Soda(x) && (10, \text{Fact: Chips(Lay's)}) \\ 
+12. & \text{False} && (11, \text{Fact: Soda(Zero)}, \{x = Zero\})
 \end{align}
 $$
 
