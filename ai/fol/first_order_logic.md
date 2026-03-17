@@ -1,9 +1,3 @@
----
-tags:
-  - uni
-  - ai
-  - logic
----
 # 1. SKN Club
 ## Question
  Joe, June and Jack belong to the SKN Club. Every member of the SKN Club is either a runner or a footballer or both. No footballer likes rain, and all runners like sunny. Joe dislikes whatever Jack likes and likes whatever Jack dislikes. June likes rain and sunny.
