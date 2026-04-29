@@ -1,0 +1,31 @@
+==============================
+Iteration 1
+==============================
+
+Utility Matrix (U):
+3×3 Matrix{Float64}:
+ -0.04  -0.04  -0.04
+ -0.04  -1.0    1.0
+  0.76  -0.04   0.86
+
+Policy Matrix (Best Actions):
+3×3 Matrix{Symbol}:
+ :left   :left  :left
+ :left   :none  :none
+ :right  :down  :left
+
+==============================
+Iteration 2
+==============================
+
+Utility Matrix (U):
+3×3 Matrix{Float64}:
+ -0.08    0.464  -0.08
+ -0.08   -1.0     1.0
+  0.832   0.544   0.856
+
+Policy Matrix (Best Actions):
+3×3 Matrix{Symbol}:
+ :up     :right  :up
+ :left   :none   :none
+ :right  :right  :left
