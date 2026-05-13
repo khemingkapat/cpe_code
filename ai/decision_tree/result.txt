@@ -1,0 +1,40 @@
+Activating project environment from parent directory...
+Split on: IntersectionBlocked (IG: 0.079)
+  Branch [IntersectionBlocked == No]:
+  Split on: Cyclist (IG: 0.0773)
+    Branch [Cyclist == No]:
+    Split on: Pedestrians (IG: 0.5488)
+      Branch [Pedestrians == Yes]:
+      Split on: CarAheadMoving (IG: 0.3113)
+        Branch [CarAheadMoving == No]:
+        Leaf Node: No
+        Branch [CarAheadMoving == Yes]:
+        Split on: CrossTraffic (IG: 1.0)
+          Branch [CrossTraffic == No]:
+          Leaf Node: No
+          Branch [CrossTraffic == Yes]:
+          Leaf Node: Yes
+      Branch [Pedestrians == No]:
+      Leaf Node: Yes
+    Branch [Cyclist == Yes]:
+    Split on: Turning (IG: 0.2448)
+      Branch [Turning == Right]:
+      Leaf Node: No
+      Branch [Turning == Left]:
+      Split on: OncomingTraffic (IG: 0.3219)
+        Branch [OncomingTraffic == Yes]:
+        Leaf Node: No
+        Branch [OncomingTraffic == No]:
+        Split on: Pedestrians (IG: 1.0)
+          Branch [Pedestrians == Yes]:
+          Leaf Node: No
+          Branch [Pedestrians == No]:
+          Leaf Node: Yes
+      Branch [Turning == No]:
+      Split on: CrossTraffic (IG: 0.9183)
+        Branch [CrossTraffic == Yes]:
+        Leaf Node: No
+        Branch [CrossTraffic == No]:
+        Leaf Node: Yes
+  Branch [IntersectionBlocked == Yes]:
+  Leaf Node: No
