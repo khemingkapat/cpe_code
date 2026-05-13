@@ -1,0 +1,20 @@
+Activating project environment from parent directory...
+Score for No: 0.0010502400548696843
+Score for Yes: 0.007476806640625
+Prediction 1: Yes
+===================================================
+Score for No: 0.002813143004115226
+Score for Yes: 0.0016021728515625
+Prediction 2: No
+===================================================
+Score for No: 0.0033757716049382714
+Score for Yes: 0.0067291259765625
+Prediction 3: Yes
+===================================================
+Score for No: 0.0004200960219478738
+Score for Yes: 0.0
+Prediction 4: No
+===================================================
+Score for No: 9.377143347050753e-5
+Score for Yes: 0.0
+Prediction 5: No
