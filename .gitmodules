@@ -22,3 +22,6 @@
 	path = swe/jetswitch
 	url = https://github.com/khemingkapat/jetswitch
     ignore = dirty
+[submodule "ai/bayesian_f1"]
+	path = ai/bayesian_f1
+	url = https://github.com/khemingkapat/bayesian_f1
