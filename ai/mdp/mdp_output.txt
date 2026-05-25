@@ -1,31 +1,183 @@
+Activating project environment from parent directory...
+
 ==============================
 Iteration 1
 ==============================
+currently at (2, 1) with current value as 0.0 
+	with action going up, EU(up)=-0.1
+	with action going left, EU(left)=0.0
+	with action going right, EU(right)=-0.8
+	with action going down, EU(down)=-0.1
+then, with values current value is -0.04,then best action is to go left
+currently at (2, 1) with current value as -0.04 
+	with action going up, EU(up)=-0.104
+	with action going left, EU(left)=-0.036
+	with action going right, EU(right)=-0.8
+	with action going down, EU(down)=-0.1
+then, with values current value is -0.076,then best action is to go left
+currently at (2, 1) with current value as -0.076 
+	with action going up, EU(up)=-0.108
+	with action going left, EU(left)=-0.068
+	with action going right, EU(right)=-0.8
+	with action going down, EU(down)=-0.1
+then, with values current value is -0.108,then best action is to go left
+currently at (2, 1) with current value as -0.108 
+	with action going up, EU(up)=-0.111
+	with action going left, EU(left)=-0.097
+	with action going right, EU(right)=-0.8
+	with action going down, EU(down)=-0.1
+then, with values current value is -0.137,then best action is to go left
+currently at (2, 1) with current value as -0.137 
+	with action going up, EU(up)=-0.114
+	with action going left, EU(left)=-0.123
+	with action going right, EU(right)=-0.8
+	with action going down, EU(down)=-0.1
+then, with values current value is -0.14,then best action is to go down
+currently at (3, 1) with current value as 0.0 
+	with action going up, EU(up)=-0.112
+	with action going left, EU(left)=-0.014
+	with action going right, EU(right)=-0.014
+	with action going down, EU(down)=0.0
+then, with values current value is -0.04,then best action is to go down
+currently at (3, 1) with current value as -0.04 
+	with action going up, EU(up)=-0.116
+	with action going left, EU(left)=-0.05
+	with action going right, EU(right)=-0.018
+	with action going down, EU(down)=-0.036
+then, with values current value is -0.058,then best action is to go right
+currently at (3, 2) with current value as 0.0 
+	with action going up, EU(up)=-0.806
+	with action going left, EU(left)=-0.152
+	with action going right, EU(right)=-0.1
+	with action going down, EU(down)=0.0
+then, with values current value is -0.04,then best action is to go down
+currently at (3, 2) with current value as -0.04 
+	with action going up, EU(up)=-0.806
+	with action going left, EU(left)=-0.152
+	with action going right, EU(right)=-0.104
+	with action going down, EU(down)=-0.036
+then, with values current value is -0.076,then best action is to go down
+currently at (3, 2) with current value as -0.076 
+	with action going up, EU(up)=-0.806
+	with action going left, EU(left)=-0.152
+	with action going right, EU(right)=-0.108
+	with action going down, EU(down)=-0.068
+then, with values current value is -0.108,then best action is to go down
+currently at (3, 2) with current value as -0.108 
+	with action going up, EU(up)=-0.806
+	with action going left, EU(left)=-0.152
+	with action going right, EU(right)=-0.111
+	with action going down, EU(down)=-0.097
+then, with values current value is -0.137,then best action is to go down
+currently at (3, 2) with current value as -0.137 
+	with action going up, EU(up)=-0.806
+	with action going left, EU(left)=-0.152
+	with action going right, EU(right)=-0.114
+	with action going down, EU(down)=-0.123
+then, with values current value is -0.154,then best action is to go right
+currently at (3, 3) with current value as 0.0 
+	with action going up, EU(up)=0.785
+	with action going left, EU(left)=-0.039
+	with action going right, EU(right)=0.1
+	with action going down, EU(down)=0.0
+then, with values current value is 0.745,then best action is to go up
 
 Utility Matrix (U):
 3×3 Matrix{Float64}:
- -0.04  -0.04  -0.04
- -0.04  -1.0    1.0
-  0.76  -0.04   0.86
+  0.0     0.0    0.0
+ -0.14   -1.0    1.0
+ -0.058  -0.154  0.745
 
 Policy Matrix (Best Actions):
 3×3 Matrix{Symbol}:
- :left   :left  :left
- :left   :none  :none
- :right  :down  :left
+ :none   :none   :none
+ :down   :none   :none
+ :right  :right  :up
 
 ==============================
 Iteration 2
 ==============================
+currently at (2, 1) with current value as -0.14 
+	with action going up, EU(up)=-0.114
+	with action going left, EU(left)=-0.126
+	with action going right, EU(right)=-0.806
+	with action going down, EU(down)=-0.152
+then, with values current value is -0.154,then best action is to go up
+currently at (1, 1) with current value as 0.0 
+	with action going up, EU(up)=0.0
+	with action going left, EU(left)=0.0
+	with action going right, EU(right)=-0.015
+	with action going down, EU(down)=-0.139
+then, with values current value is -0.04,then best action is to go up
+currently at (1, 1) with current value as -0.04 
+	with action going up, EU(up)=-0.036
+	with action going left, EU(left)=-0.04
+	with action going right, EU(right)=-0.019
+	with action going down, EU(down)=-0.139
+then, with values current value is -0.059,then best action is to go right
+currently at (1, 2) with current value as 0.0 
+	with action going up, EU(up)=-0.006
+	with action going left, EU(left)=-0.053
+	with action going right, EU(right)=-0.1
+	with action going down, EU(down)=-0.9
+then, with values current value is -0.046,then best action is to go up
+currently at (1, 2) with current value as -0.046 
+	with action going up, EU(up)=-0.043
+	with action going left, EU(left)=-0.058
+	with action going right, EU(right)=-0.105
+	with action going down, EU(down)=-0.9
+then, with values current value is -0.083,then best action is to go up
+currently at (1, 2) with current value as -0.083 
+	with action going up, EU(up)=-0.072
+	with action going left, EU(left)=-0.061
+	with action going right, EU(right)=-0.108
+	with action going down, EU(down)=-0.9
+then, with values current value is -0.101,then best action is to go left
+currently at (1, 1) with current value as -0.059 
+	with action going up, EU(up)=-0.063
+	with action going left, EU(left)=-0.059
+	with action going right, EU(right)=-0.102
+	with action going down, EU(down)=-0.149
+then, with values current value is -0.099,then best action is to go left
+currently at (1, 1) with current value as -0.099 
+	with action going up, EU(up)=-0.099
+	with action going left, EU(left)=-0.099
+	with action going right, EU(right)=-0.106
+	with action going down, EU(down)=-0.149
+then, with values current value is -0.139,then best action is to go left
+currently at (1, 1) with current value as -0.139 
+	with action going up, EU(up)=-0.135
+	with action going left, EU(left)=-0.139
+	with action going right, EU(right)=-0.11
+	with action going down, EU(down)=-0.149
+then, with values current value is -0.15,then best action is to go right
+currently at (1, 2) with current value as -0.101 
+	with action going up, EU(up)=-0.096
+	with action going left, EU(left)=-0.145
+	with action going right, EU(right)=-0.11
+	with action going down, EU(down)=-0.9
+then, with values current value is -0.136,then best action is to go up
+currently at (1, 2) with current value as -0.136 
+	with action going up, EU(up)=-0.124
+	with action going left, EU(left)=-0.149
+	with action going right, EU(right)=-0.114
+	with action going down, EU(down)=-0.9
+then, with values current value is -0.154,then best action is to go right
+currently at (1, 3) with current value as 0.0 
+	with action going up, EU(up)=-0.015
+	with action going left, EU(left)=-0.139
+	with action going right, EU(right)=0.1
+	with action going down, EU(down)=0.9
+then, with values current value is 0.86,then best action is to go down
 
 Utility Matrix (U):
 3×3 Matrix{Float64}:
- -0.08    0.464  -0.08
- -0.08   -1.0     1.0
-  0.832   0.544   0.856
+ -0.15   -0.154  0.86
+ -0.154  -1.0    1.0
+ -0.058  -0.154  0.745
 
 Policy Matrix (Best Actions):
 3×3 Matrix{Symbol}:
- :up     :right  :up
- :left   :none   :none
- :right  :right  :left
+ :right  :right  :down
+ :up     :none   :none
+ :right  :right  :up
