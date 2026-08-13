@@ -1,12 +1,20 @@
-U = fill(-1.0, 3, 3)
-U[2, 2] = -10.0
-U[2, 3] = 10.0
+U = fill(-0.04, 4, 6)
+
+U[1, 2] = 1.0
+U[1, 5] = -1.0
+
+U[2, 2] = 0.0
+U[2, 5] = 0.0
+U[4, 3] = 0.0
+U[4, 4] = 0.0
 
 function interactive_environment(pos)
-    if (U[pos...] != -1)
-        return (U[pos...], true)
+    cell_value = U[pos...]
+
+    if cell_value == minimum(U) || cell_value == maximum(U)
+        return (cell_value, true)
     else
-        return (U[pos...], false)
+        return (cell_value, false)
     end
 end
 
@@ -22,8 +30,14 @@ function get_next_state(pos, action)
         col += 1
     end
 
-    if col >= 1 && col <= 3 && row >= 1 && row <= 3
-        return (row, col)
+    max_rows, max_cols = size(U)
+
+    if row >= 1 && row <= max_rows && col >= 1 && col <= max_cols
+        if U[row, col] == 0.0
+            return pos
+        else
+            return (row, col)
+        end
     else
         return pos
     end

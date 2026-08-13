@@ -59,19 +59,22 @@ function run_episode(start_pos)
         pos, is_terminal = update_cell(pos, action)
     end
 end
-
 function print_policy()
     arrows = Dict(:up => "^", :down => "v", :left => "<", :right => ">")
 
     for r in 1:rows
         for c in 1:cols
-            reward, is_terminal = interactive_environment((r, c))
+            if U[r, c] == 0.0
+                print("[w] ") # Print [W] for Wall cells
+                continue
+            end
 
+            reward, is_terminal = interactive_environment((r, c))
             if is_terminal
                 if reward > 0
-                    print("[G] ") # Goal state (+10.0)
+                    print("[G] ") # Goal
                 else
-                    print("[X] ") # Trap state (-10.0)
+                    print("[X] ") # Trap
                 end
             else
                 best_act = get_best_action((r, c))
@@ -83,23 +86,18 @@ function print_policy()
     println("-"^20)
 end
 
-# Main training loop
-num_episodes = 100
-start_pos = (2, 1)
 
-println("Policy Grid at Start")
-print_policy()
+function run_episodes(start_pos, k, step=100)
+    println("Policy Grid at Start")
+    print_policy()
+    for episode in 1:k
+        run_episode(start_pos)
 
-for episode in 1:num_episodes
-    run_episode(start_pos)
-
-    # Print the updated policy grid over time
-    if episode % 20 == 0
-        println("Policy Grid after Episode $episode:")
-        print_policy()
+        if episode % step == 0
+            println("Policy Grid after Episode $episode:")
+            print_policy()
+        end
     end
 end
 
-
-
-
+run_episodes((4, 2), 1000)
