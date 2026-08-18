@@ -31,7 +31,6 @@
           echo "Text Analytics Course Works"
           echo "Run 'uv sync' to install dependencies"
           echo "Run 'uv run jupyter lab' to start"
-          echo ""
 
           export SHELL=/home/khemi/.nix-profile/bin/zsh
           exec /home/khemi/.nix-profile/bin/zsh
