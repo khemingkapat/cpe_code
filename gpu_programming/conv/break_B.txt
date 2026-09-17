@@ -1,0 +1,42 @@
+BREAK B - grid sized by IN_TILE_DIM (32) instead of OUT_TILE_DIM (28)
+     image 128x128
+     correct grid would be ceil(128/28) = 5 blocks per axis
+     broken  grid is    ceil(128/32) = 4 blocks per axis
+E2_BREAKB_DIFFS = 3840
+
+     difference map (each char = 4x4 pixels, '.' match, 'X' differ)
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     ............................XXXX
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+     Record E2_BREAKB_DIFFS, paste the map, and explain the
+     SHAPE of the damaged region.

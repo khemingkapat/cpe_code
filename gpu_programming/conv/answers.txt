@@ -1,0 +1,107 @@
+# =====================================================================
+# Week 6 Lab - ANSWER SHEET
+#
+# Rename this file to  answers.txt  and fill in every value after the "=".
+# Keep the key names exactly as they are: this file is marked by script.
+#
+# Lines starting with # are ignored. Do not delete any key.
+# If you genuinely cannot obtain a value, write  SKIP  and explain in your
+# report. A wrong number costs less than a missing one.
+# =====================================================================
+
+STUDENT_NAME = Khem Ingkapat
+STUDENT_ID   = 66070503408
+
+# ---------------------------------------------------------------------
+# Your hardware. GPU_NAME and THREADS_PER_SM / BLOCKS_PER_SM come from the
+# banner each program prints on stderr (and from your Week 4 device_query).
+# PEAK_FP32_TFLOPS comes from your card's published spec sheet.
+# ---------------------------------------------------------------------
+GPU_NAME         = Tesla  T4
+PEAK_BW_GB_S     = 320 
+PEAK_FP32_TFLOPS = 8.1
+THREADS_PER_SM   = 1024
+BLOCKS_PER_SM    = 16
+
+# =====================================================================
+# EXERCISE 1
+# =====================================================================
+# Derived by hand. With m = 2r+1: ops = 2m^2 - 1, bytes = 4m^2.
+E1_AI_R1   = 0.4722
+E1_OPS_R2  = 49
+E1_BYTES_R2 = 100
+E1_AI_R2   = 0.49
+E1_AI_R3   = 0.495
+# As r grows without bound, AI tends to what value?
+E1_AI_LIMIT = 0.5
+
+# Roofline, using YOUR two hardware numbers above.
+# E1_ROOF_GFLOPS = PEAK_BW_GB_S * E1_AI_R2
+E1_ROOF_GFLOPS = 156.8
+# Is the kernel memory-bound or compute-bound under this model?
+E1_BOUND = memory                 # memory | compute
+
+# Measured, from ./conv_basic  (the r = 2 row)
+E1_MEASURED_GFLOPS_R2 = 370.2
+# Does your measurement exceed E1_ROOF_GFLOPS?
+E1_EXCEEDS_ROOF = yes          # yes | no
+
+# BREAK A, from ./conv_basic break
+E1_BREAK_DIFFS = 1008
+
+# =====================================================================
+# EXERCISE 2   (r = 2 throughout, so the mask is 5x5)
+# =====================================================================
+# Derived by hand. OUT = IN - 2r ; halo% = (IN^2 - OUT^2) / IN^2 x 100
+E2_OUT_TILE_8   = 4
+E2_HALO_PCT_8   = 75
+E2_OUT_TILE_16  = 12
+E2_HALO_PCT_16  = 43.75
+E2_OUT_TILE_32  = 28
+E2_HALO_PCT_32  = 23.4375
+
+# Occupancy at IN_TILE_DIM = 32, using YOUR THREADS_PER_SM above.
+E2_THREADS_PER_BLOCK_32 = 1024
+E2_BLOCKS_RESIDENT_32   = 1  # floor(THREADS_PER_SM / threads per block)
+
+# Global input loads per output element.
+E2_LOADS_PER_OUT_V1    =  25  # the basic kernel
+E2_LOADS_PER_OUT_V3_32 =  1.31  # IN^2 / OUT^2, two decimal places
+E2_REDUCTION           =  19.1  # V1 / V3, one decimal place
+
+# Tiled arithmetic intensity at IN_TILE_DIM = 32:
+#   ops per block = OUT^2 x 49 ; global bytes per block = IN^2 x 4
+E2_TILED_AI_32 = 9.38
+
+# Measured, from ./conv_tiled
+E2_SPEEDUP_V2_V1 = 1.358
+E2_SPEEDUP_V3_V1 = 1.237
+E2_FASTEST_TILE  = 16         # 8 | 16 | 32
+
+# BREAK B, from ./conv_tiled break1
+E2_BREAKB_DIFFS = 3840
+
+# BREAK C, from ./conv_tiled break2
+E2_BREAKC_WRONG      = 4251
+E2_BREAKC_RUNS_AGREE = no     # yes | no
+
+# =====================================================================
+# EXERCISE 3
+# =====================================================================
+# Derived by hand: with C_in = C_out = C and K = 3, AI = C x K^2 / 4
+E3_AI_C1  = 2.25
+E3_AI_C16 = 36
+E3_AI_C64 = 144
+
+# Ridge point of YOUR GPU = PEAK_FP32_TFLOPS x 1000 / PEAK_BW_GB_S
+E3_RIDGE = 25.313
+# The channel count at which this layer stops being memory-bound:
+E3_CROSSOVER_C = 11.25
+
+# Measured, from ./conv_layer
+E3_PEAK_GFLOPS = 404.2           # best GFLOP/s you reached in the sweep
+E3_FLATTEN_C   = 8            # the C at which your curve stops rising steeply
+
+# BREAK D, from ./conv_layer break
+E3_INPLACE_DIFFS      = 889070
+E3_INPLACE_RUNS_AGREE = yes    # yes | no

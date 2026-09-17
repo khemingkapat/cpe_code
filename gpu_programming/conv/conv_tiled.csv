@@ -1,0 +1,6 @@
+variant,in_tile,ms_per_trial,gflop_s
+V1_global_mask,-,1.5387,534.3
+V2_const_mask,-,1.1330,725.6
+V3_tiled,8,3.2041,256.6
+V3_tiled,16,1.2440,660.8
+V3_tiled,32,1.2690,647.8

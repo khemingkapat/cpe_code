@@ -1,0 +1,12 @@
+BREAK D - 8 stacked layers, C = 16, 256x256
+     ping-pong (correct): done, sample value 0.051108
+     in-place run 1: 889070 of 1048576 elements differ from the correct result (max error 1.151e-01)
+     in-place run 2: 888988 of 1048576 elements differ from the correct result (max error 1.151e-01)
+
+E3_INPLACE_DIFFS = 889070
+E3_INPLACE_RUNS_AGREE = yes
+     (the two in-place runs differ from EACH OTHER in 0 elements)
+
+     Record both values. Then explain WHICH thread read data
+     written by WHICH other thread, and why __syncthreads()
+     inside a block does not prevent it.

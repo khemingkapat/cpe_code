@@ -1,0 +1,15 @@
+BREAK C - __syncthreads() removed after the tile load (IN_TILE_DIM = 32)
+     image 128x128, three consecutive runs
+
+     run 1: wrong elements =    4251   max error = 1.179e+00
+     run 2: wrong elements =       0   max error = 4.768e-07
+             differs from run 1 in 4249 elements
+     run 3: wrong elements =       0   max error = 4.768e-07
+             differs from run 1 in 4249 elements
+
+E2_BREAKC_WRONG = 4251        (from run 1)
+E2_BREAKC_RUNS_AGREE = no
+
+     If the three runs disagree you have observed a genuine race.
+     If they happen to agree, say so honestly and explain why an
+     unsynchronized read can still LOOK stable on some hardware.
