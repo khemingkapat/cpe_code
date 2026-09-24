@@ -1,0 +1,16 @@
+/content# vim
+/content# vim reduction.cu
+/content# make ARCH=sm_75 run
+nvcc -O3 -arch=sm_75 reduction.cu -o reduction
+./reduction
+# GPU: Tesla T4 (CC 7.5), 40 SMs
+
+--- how do you add 67108864 ones? ---
+   CPU loop, float      : 16777216
+   CPU loop, double     : 67108864
+   GPU tree (this run)  : 42949674
+   correct answer       : 67108864
+
+RESULT block=100 coarse=4 indexing=2 sync=1 grid=100% | sum=42949674 expected=67108864 MISMATCH | 1.395 ms | 192.5 GB/s | 60.1 % of peak
+         the sum is short by 24159190, i.e. 24159190 of the 67108864 values never reached it
+         (blocks launched = 167773 of 167773, covering 67108864 elements)

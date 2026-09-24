@@ -1,0 +1,65 @@
+# =====================================================================
+# Week 7 Lab - ANSWER SHEET
+#
+# Rename to  answers.txt  and fill in every value after the "=".
+# Keep the key names exactly as they are: this file is marked by script.
+# Lines starting with # are ignored. Do not delete any key.
+# =====================================================================
+
+STUDENT_NAME =
+STUDENT_ID   =
+
+GPU_NAME     =
+PEAK_BW_GB_S =          # from your Week 4 device_query output
+
+# =====================================================================
+# EXERCISE 1 - THE BASELINE   (control panel untouched)
+# =====================================================================
+# The three answers the program prints for "add 67,108,864 ones":
+E1_CPU_FLOAT_SUM  =
+E1_CPU_DOUBLE_SUM =
+E1_GPU_SUM        =
+
+# Worked out by hand:
+E1_BYTES_READ =         # how many bytes the kernel must read
+E1_AI         =         # adds per byte moved
+E1_FLOOR_MS   =         # E1_BYTES_READ / PEAK_BW_GB_S, in milliseconds
+                        # (the fastest this reduction could possibly be)
+
+# From your RESULT line:
+E1_MS       =
+E1_GBS      =
+E1_PCT_PEAK =
+
+# =====================================================================
+# EXERCISE 2 - BREAKS THAT CHANGE THE ANSWER
+# =====================================================================
+# Run 2: BLOCK_SIZE 256 -> 100
+E2_B100_SUM   =
+E2_B100_LANES =         # how many of the 100 threads' partials survived
+E2_B100_PCT   =         # E2_B100_SUM as a % of the correct answer
+
+# Run 3: GRID_PERCENT 100 -> 50
+E2_GRID50_SUM =
+
+# Run 4: USE_SYNC 1 -> 0   (run it three times)
+E2_NOSYNC_SUM        =  # the sum from your first run
+E2_NOSYNC_RUNS_AGREE =  # yes | no
+
+# =====================================================================
+# EXERCISE 3 - BREAKS THAT CHANGE ONLY THE TIME
+# =====================================================================
+# Run 5: INDEXING 2 -> 1 (interleaved, divergent)
+E3_INTERLEAVED_SUM       =   # is the ANSWER still right?
+E3_INTERLEAVED_MS        =
+E3_INTERLEAVED_SLOWDOWN  =   # E3_INTERLEAVED_MS / E1_MS
+
+# Run 6: COARSE 4 -> 1
+E3_COARSE1_MS  =
+E3_COARSE1_GBS =
+
+# Run 7: your best configuration (tune BLOCK_SIZE and COARSE)
+E3_BEST_BLOCK    =
+E3_BEST_COARSE   =
+E3_BEST_GBS      =
+E3_BEST_PCT_PEAK =

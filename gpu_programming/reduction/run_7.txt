@@ -1,0 +1,5 @@
+/content# make ARCH=sm_75 run                                                                nvcc -O3 -arch=sm_75 reduction.cu -o reduction                                               ./reduction                                                                                  # GPU: Tesla T4 (CC 7.5), 40 SMs                                                                                                                                                          --- how do you add 67108864 ones? ---                                                           CPU loop, float      : 16777216
+   CPU loop, double     : 67108864
+   GPU tree (this run)  : 67108864
+   correct answer       : 67108864
+                                                                                             RESULT block=256 coarse=16 indexing=1 sync=1 grid=100% | sum=67108864 expected=67108864 MATCH | 0.962 ms | 279.0 GB/s | 87.2 % of peak                                                             (blocks launched = 16384 of 16384, covering 67108864 elements)                      /content#

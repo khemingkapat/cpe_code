@@ -1,0 +1,65 @@
+# =====================================================================
+# Week 7 Lab - ANSWER SHEET
+#
+# Rename to  answers.txt  and fill in every value after the "=".
+# Keep the key names exactly as they are: this file is marked by script.
+# Lines starting with # are ignored. Do not delete any key.
+# =====================================================================
+
+STUDENT_NAME = Khem Ingkapat
+STUDENT_ID   = 66070503408
+
+GPU_NAME     = Tesla T4
+PEAK_BW_GB_S = 320         # from your Week 4 device_query output
+
+# =====================================================================
+# EXERCISE 1 - THE BASELINE   (control panel untouched)
+# =====================================================================
+# The three answers the program prints for "add 67,108,864 ones":
+E1_CPU_FLOAT_SUM  = 16777216
+E1_CPU_DOUBLE_SUM = 67108864
+E1_GPU_SUM        = 67108864
+
+# Worked out by hand:
+E1_BYTES_READ = 268435456        # how many bytes the kernel must read
+E1_AI         = 0.25        # adds per byte moved
+E1_FLOOR_MS   = 0.839        # E1_BYTES_READ / PEAK_BW_GB_S, in milliseconds
+                        # (the fastest this reduction could possibly be)
+
+# From your RESULT line:
+E1_MS       = 1.275
+E1_GBS      = 210.5
+E1_PCT_PEAK = 65.8
+
+# =====================================================================
+# EXERCISE 2 - BREAKS THAT CHANGE THE ANSWER
+# =====================================================================
+# Run 2: BLOCK_SIZE 256 -> 100
+E2_B100_SUM   = 42949674
+E2_B100_LANES =  64       # how many of the 100 threads' partials survived
+E2_B100_PCT   =  64       # E2_B100_SUM as a % of the correct answer
+
+# Run 3: GRID_PERCENT 100 -> 50
+E2_GRID50_SUM = 33554432
+
+# Run 4: USE_SYNC 1 -> 0   (run it three times)
+E2_NOSYNC_SUM        = 17622640 # the sum from your first run
+E2_NOSYNC_RUNS_AGREE = no # yes | no
+
+# =====================================================================
+# EXERCISE 3 - BREAKS THAT CHANGE ONLY THE TIME
+# =====================================================================
+# Run 5: INDEXING 2 -> 1 (interleaved, divergent)
+E3_INTERLEAVED_SUM       =  67108864 # is the ANSWER still right?
+E3_INTERLEAVED_MS        = 1.244
+E3_INTERLEAVED_SLOWDOWN  = 0.97  # E3_INTERLEAVED_MS / E1_MS
+
+# Run 6: COARSE 4 -> 1
+E3_COARSE1_MS  = 4.758
+E3_COARSE1_GBS = 56.4
+
+# Run 7: your best configuration (tune BLOCK_SIZE and COARSE)
+E3_BEST_BLOCK    = 256
+E3_BEST_COARSE   = 16
+E3_BEST_GBS      = 279.2
+E3_BEST_PCT_PEAK = 87.2

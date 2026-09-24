@@ -1,0 +1,42 @@
+/content# vim reduction.cu
+/content# make ARCH=sm_75 run
+nvcc -O3 -arch=sm_75 reduction.cu -o reduction
+./reduction
+# GPU: Tesla T4 (CC 7.5), 40 SMs
+
+--- how do you add 67108864 ones? ---
+   CPU loop, float      : 16777216
+   CPU loop, double     : 67108864
+   GPU tree (this run)  : 17622640
+   correct answer       : 67108864
+
+RESULT block=256 coarse=4 indexing=2 sync=0 grid=100% | sum=17622640 expected=67108864 MISMATCH | 1.425 ms | 188.3 GB/s | 58.8 % of peak
+         the sum is short by 49486224, i.e. 49486224 of the 67108864 values never reached it
+         (blocks launched = 65536 of 65536, covering 67108864 elements)
+/content# make ARCH=sm_75 run
+./reduction
+# GPU: Tesla T4 (CC 7.5), 40 SMs
+
+--- how do you add 67108864 ones? ---
+   CPU loop, float      : 16777216
+   CPU loop, double     : 67108864
+   GPU tree (this run)  : 18350984
+   correct answer       : 67108864
+
+RESULT block=256 coarse=4 indexing=2 sync=0 grid=100% | sum=18350984 expected=67108864 MISMATCH | 1.080 ms | 248.6 GB/s | 77.7 % of peak
+         the sum is short by 48757880, i.e. 48757880 of the 67108864 values never reached it
+         (blocks launched = 65536 of 65536, covering 67108864 elements)
+/content# make ARCH=sm_75 run
+./reduction
+# GPU: Tesla T4 (CC 7.5), 40 SMs
+
+--- how do you add 67108864 ones? ---
+   CPU loop, float      : 16777216
+   CPU loop, double     : 67108864
+   GPU tree (this run)  : 18302344
+   correct answer       : 67108864
+
+RESULT block=256 coarse=4 indexing=2 sync=0 grid=100% | sum=18302344 expected=67108864 MISMATCH | 1.112 ms | 241.5 GB/s | 75.5 % of peak
+         the sum is short by 48806520, i.e. 48806520 of the 67108864 values never reached it
+         (blocks launched = 65536 of 65536, covering 67108864 elements)
+/content#
