@@ -292,52 +292,6 @@
             echo "==> Patched colab-cli runtime.py (KernelClient → JupyterKernelClient)"
           fi
           unset _RUNTIME_PY
-
-          # Exit hook: Cleanly stop Colab session when exiting the dev environment
-          _colab_cleanup() {
-            if [ "''${COLAB_KEEP_ON_EXIT:-0}" = "1" ]; then
-              echo "==> Dev environment exited. (COLAB_KEEP_ON_EXIT=1: preserving Colab session)"
-              return 0
-            fi
-            if command -v colab >/dev/null 2>&1; then
-              _ACTIVE=$(colab sessions 2>/dev/null | grep -v '\[?\]' | grep -c '|' || true)
-              if [ "$_ACTIVE" -gt 0 ]; then
-                echo ""
-                echo "==> Exiting dev environment: stopping Colab session 'cuda-dev'..."
-                colab stop -s cuda-dev 2>/dev/null || true
-              fi
-              unset _ACTIVE
-            fi
-          }
-
-          # Attach to existing Colab session named 'cuda-dev', or start a new one
-          if command -v colab >/dev/null 2>&1; then
-            _COLAB_ACTIVE=$(colab sessions 2>/dev/null | grep -v '\[?\]' | grep -c '|' || true)
-            if [ "$_COLAB_ACTIVE" -gt 0 ]; then
-              echo "==> Active Colab session(s):"
-              colab sessions 2>/dev/null | grep -v '\[?\]'
-            else
-              echo "==> No active sessions. Starting new Colab GPU session (T4, name=cuda-dev)..."
-              colab new -s cuda-dev --gpu T4 || echo "Note: Run 'colab-start' to retry, or 'colab auth login' to authenticate."
-            fi
-            unset _COLAB_ACTIVE
-          fi
-          echo "  (Note: Session will auto-stop on shell exit. Set COLAB_KEEP_ON_EXIT=1 to keep running)"
-          echo ""
-
-          case "$-" in
-            *i*)
-              trap _colab_cleanup EXIT INT TERM HUP
-              if [ -t 0 ] && [ -z "$ZSH_VERSION" ] && [ -x /home/khemi/.nix-profile/bin/zsh ]; then
-                export SHELL=/home/khemi/.nix-profile/bin/zsh
-                /home/khemi/.nix-profile/bin/zsh
-                exit 0
-              fi
-              ;;
-            *)
-              # Non-interactive command invocation (e.g. nix develop --command ...)
-              ;;
-          esac
         '';
       };
     };
