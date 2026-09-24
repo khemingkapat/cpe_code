@@ -21,25 +21,74 @@
       '';
 
       slurm-scp = pkgs.writeShellScriptBin "slurm-scp" ''
-        if [ $# -lt 1 ]; then
-          echo "Usage: slurm-scp <source> [destination]"
-          echo "Example: slurm-scp matrix/matmul.cu ~/matrix"
+        REMOTE="${slurmUser}@${slurmHost}"
+
+        opts=()
+        args=()
+
+        while [ $# -gt 0 ]; do
+          case "$1" in
+            -P|-i|-o|-F|-l)
+              opts+=("$1" "$2")
+              shift 2
+              ;;
+            -*)
+              opts+=("$1")
+              shift
+              ;;
+            *)
+              args+=("$1")
+              shift
+              ;;
+          esac
+        done
+
+        if [ ''${#args[@]} -lt 2 ]; then
+          echo "Error: Both source and destination must be specified." >&2
+          echo "" >&2
+          echo "Usage: slurm-scp [options] <source>... <destination>" >&2
+          echo "" >&2
+          echo "Examples:" >&2
+          echo "  Upload:   slurm-scp matmul.cu matrix/             # Uploads to remote ~/matrix/" >&2
+          echo "  Upload:   slurm-scp file1.cu file2.cu matrix/     # Uploads multiple files" >&2
+          echo "  Download: slurm-scp :matrix/output.txt .          # Downloads from remote ~/matrix/" >&2
+          echo "  Download: slurm-scp :matrix/results/ ./results/   # Downloads directory" >&2
           exit 1
         fi
-        SRC="$1"
-        DEST="''${2:-~/matrix}"
-        exec scp -r "$SRC" "${slurmUser}@${slurmHost}:$DEST"
+
+        # Check if any argument has an explicit remote prefix (:path, remote:path, slurm:path)
+        has_remote=false
+        for arg in "''${args[@]}"; do
+          if [[ "$arg" == :* || "$arg" == remote:* || "$arg" == slurm:* || "$arg" == "$REMOTE:"* ]]; then
+            has_remote=true
+            break
+          fi
+        done
+
+        final_args=()
+        last_idx=$(( ''${#args[@]} - 1 ))
+
+        for i in "''${!args[@]}"; do
+          a="''${args[$i]}"
+          if [[ "$a" == :* ]]; then
+            final_args+=("$REMOTE:''${a#:}")
+          elif [[ "$a" == remote:* ]]; then
+            final_args+=("$REMOTE:''${a#remote:}")
+          elif [[ "$a" == slurm:* ]]; then
+            final_args+=("$REMOTE:''${a#slurm:}")
+          elif [ "$has_remote" = false ] && [ "$i" -eq "$last_idx" ]; then
+            # Default: if no remote prefix was used anywhere, treat destination as remote
+            final_args+=("$REMOTE:$a")
+          else
+            final_args+=("$a")
+          fi
+        done
+
+        exec scp -r "''${opts[@]}" "''${final_args[@]}"
       '';
 
       scp-slurm = pkgs.writeShellScriptBin "scp-slurm" ''
-        if [ $# -lt 1 ]; then
-          echo "Usage: scp-slurm <source> [destination]"
-          echo "Example: scp-slurm matrix/matmul.cu ~/matrix"
-          exit 1
-        fi
-        SRC="$1"
-        DEST="''${2:-~/matrix}"
-        exec scp -r "$SRC" "${slurmUser}@${slurmHost}:$DEST"
+        exec slurm-scp "$@"
       '';
 
       colab-start = pkgs.writeShellScriptBin "colab-start" ''
@@ -247,16 +296,6 @@
           alias slurm-ssh='ssh -l ${slurmUser} ${slurmHost}'
           alias ssh-slurm='ssh -l ${slurmUser} ${slurmHost}'
 
-          slurm-scp() {
-            if [ $# -lt 1 ]; then
-              echo "Usage: slurm-scp <source> [destination]"
-              echo "Example: slurm-scp matrix/matmul.cu ~/matrix"
-              return 1
-            fi
-            local SRC="$1"
-            local DEST="''${2:-~/matrix}"
-            scp -r "$SRC" "${slurmUser}@${slurmHost}:$DEST"
-          }
           alias scp-slurm=slurm-scp
 
           alias colab-submit='colab-submit'
@@ -271,7 +310,7 @@
           echo ""
           echo "Available Shorthands:"
           echo "  slurm-ssh                     - SSH login to Slurm portal (ssh -l ${slurmUser} ${slurmHost})"
-          echo "  slurm-scp <src> [dest]        - SCP transfer to Slurm portal (default dest: ~/matrix)"
+          echo "  slurm-scp <src>... <dest>     - SCP to/from Slurm (e.g. slurm-scp file.cu matrix/ or slurm-scp :matrix/out.txt .)"
           echo "  colab-submit <file.cu> [arch] - Compile (!nvcc -arch=sm_75) and run on Colab GPU"
           echo "  submit-colab <file.cu> [arch] - Alias for colab-submit"
           echo "  colab-start [gpu] [session]   - Start named Colab session (default: T4, cuda-dev)"
