@@ -112,6 +112,40 @@
         colab sessions
       '';
 
+      colab-console = pkgs.writeShellScriptBin "colab-console" ''
+        export PATH="$HOME/.local/bin:$PATH"
+        exec colab console "$@"
+      '';
+
+      colab-push = pkgs.writeShellScriptBin "colab-push" ''
+        export PATH="$HOME/.local/bin:$PATH"
+        if [ $# -lt 1 ]; then
+          if [ -f "matmult.cu" ]; then
+            SRC="matmult.cu"
+          elif [ -f "matmul.cu" ]; then
+            SRC="matmul.cu"
+          else
+            echo "Usage: colab-push <local_file> [remote_path]"
+            echo "Example: colab-push gpu_memory/matmult.cu"
+            echo "Example: colab-push matmult.cu /content/matmult.cu"
+            exit 1
+          fi
+        else
+          SRC="$1"
+        fi
+
+        if [ ! -f "$SRC" ]; then
+          echo "Error: Local file '$SRC' not found!"
+          exit 1
+        fi
+
+        FILENAME="$(basename "$SRC")"
+        DEST="''${2:-/content/$FILENAME}"
+
+        echo "==> Uploading $SRC → Colab:$DEST..."
+        exec colab upload "$SRC" "$DEST"
+      '';
+
       # Embed the launcher-generator into the Nix store so colab-submit
       # always has a stable path to it regardless of where the user runs from.
       colab-launcher-gen = pkgs.writeText "colab_launcher_gen.py" ''
@@ -287,6 +321,8 @@
           colab-start
           colab-stop
           colab-status
+          colab-console
+          colab-push
         ];
 
         shellHook = ''
@@ -304,6 +340,9 @@
           alias colab-start='colab-start'
           alias colab-stop='colab-stop'
           alias colab-status='colab-status'
+          alias colab-console='colab-console'
+          alias colab-push='colab-push'
+          alias colab-upload='colab-push'
 
           echo "GPU Programming Dev Environment loaded"
           echo "Installed Tools: uv, python3, clangd (clang-tools), bash-language-server"
@@ -311,11 +350,12 @@
           echo "Available Shorthands:"
           echo "  slurm-ssh                     - SSH login to Slurm portal (ssh -l ${slurmUser} ${slurmHost})"
           echo "  slurm-scp <src>... <dest>     - SCP to/from Slurm (e.g. slurm-scp file.cu matrix/ or slurm-scp :matrix/out.txt .)"
-          echo "  colab-submit <file.cu> [arch] - Compile (!nvcc -arch=sm_75) and run on Colab GPU"
-          echo "  submit-colab <file.cu> [arch] - Alias for colab-submit"
           echo "  colab-start [gpu] [session]   - Start named Colab session (default: T4, cuda-dev)"
-          echo "  colab-stop [session]          - Terminate session (default: cuda-dev)"
+          echo "  colab-push <file.cu> [dest]   - Upload local .cu file to Colab (default: /content/<filename>)"
+          echo "  colab-console                 - Connect to interactive bash/tmux shell on Colab VM"
+          echo "  colab-submit <file.cu> [arch] - Automated: upload, compile (!nvcc) and run on Colab"
           echo "  colab-status                  - List active Colab sessions"
+          echo "  colab-stop [session]          - Terminate session (default: cuda-dev)"
           echo ""
 
           # Ensure colab CLI is installed via uv tool
