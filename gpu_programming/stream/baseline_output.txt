@@ -1,0 +1,46 @@
+============================================================
+GPU Device: Tesla T4 (Compute Capability 7.5)
+PCIe Bus ID: 0000:00:04
+Total Elements: 134217728 (128M), Chunks: 8 x 16777216 (16M each)
+Memory per vector: 512.00 MB, Chunk size: 64.00 MB
+============================================================
+
+--- Variant A: Pageable Host Memory (malloc) ---
+Variant A (Pageable) Time: 357.771 ms
+Variant A Spot-check (first 10 elements of h_C):
+  h_C[0] = 4.662008
+  h_C[1] = 4.663589
+  h_C[2] = 4.665168
+  h_C[3] = 4.666750
+  h_C[4] = 4.668329
+  h_C[5] = 4.669911
+  h_C[6] = 4.671490
+  h_C[7] = 4.673070
+  h_C[8] = 4.674650
+  h_C[9] = 4.676230
+
+--- Variant B: Pinned Host Memory (cudaMallocHost) ---
+Variant B (Pinned) Time:   137.753 ms
+Variant B Spot-check (first 10 elements of h_C):
+  h_C[0] = 4.662008
+  h_C[1] = 4.663589
+  h_C[2] = 4.665168
+  h_C[3] = 4.666750
+  h_C[4] = 4.668329
+  h_C[5] = 4.669911
+  h_C[6] = 4.671490
+  h_C[7] = 4.673070
+  h_C[8] = 4.674650
+  h_C[9] = 4.676230
+
+--- Verification & Analysis ---
+Verification PASSED: Variant A and Variant B produced identical results!
+Saved reference output to 'reference_output.bin' for Exercise 2.
+
+============================================================
+RESULTS SUMMARY:
+Variant A (Pageable) Time: 357.771 ms
+Variant B (Pinned) Time:   137.753 ms
+Pinned Speedup (A/B):      2.60x
+Effective Bandwidth (Q3):  11150.40 MB/s (11.15 GB/s)
+============================================================

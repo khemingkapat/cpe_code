@@ -1,0 +1,28 @@
+========================================================================
+Exercise 3: CUDA Graphs on a Repetitive Workload
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Workload: 1000 iterations of 3 kernels on array size N = 4096
+Expected final sum: 1.5 * 2.0 * 4096 = 12288.0
+========================================================================
+
+--- Implementation A: Regular Streams ---
+Regular Streams Total Time: 22.779 ms
+Regular Streams Per-iteration: 22.779 us
+Regular Streams Sum: 12288.0 (Expected: 12288.0) -> PASS
+
+--- Implementation B: CUDA Graph via Stream Capture ---
+CUDA Graph Total Time: 20.074 ms
+CUDA Graph Per-iteration: 20.074 us
+CUDA Graph Sum: 12288.0 (Expected: 12288.0) -> PASS
+
+========================================================================
+EXERCISE 3 RESULTS TABLE
+========================================================================
+| variant         | total_time (ms) | time_per_iter (us) | speedup |
+|:----------------|:----------------|:-------------------|:--------|
+| regular streams | 22.779          | 22.779             | 1.00    |
+| cuda graph      | 20.074          | 20.074             | 1.13    |
+========================================================================
+Overall Correctness: PASS
+Speedup Ratio: 1.13x faster with CUDA Graphs
+========================================================================

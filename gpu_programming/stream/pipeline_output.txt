@@ -1,0 +1,45 @@
+========================================================================
+Exercise 2: Multi-Stream Pipeline Benchmarking
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Total Elements: 134217728 (128M), Chunks: 8 x 16777216 (16M each)
+========================================================================
+
+Running Serial Pinned Baseline (1 stream)...
+Serial Pinned Baseline Time: 137.604 ms
+
+Benchmarking naive (N_STREAMS = 2)...
+  Time: 97.127 ms, Speedup: 1.417x, Correctness: PASS
+Benchmarking naive (N_STREAMS = 4)...
+  Time: 98.236 ms, Speedup: 1.401x, Correctness: PASS
+Benchmarking naive (N_STREAMS = 8)...
+  Time: 98.121 ms, Speedup: 1.402x, Correctness: PASS
+Benchmarking interleaved (N_STREAMS = 2)...
+  Time: 97.175 ms, Speedup: 1.416x, Correctness: PASS
+Benchmarking interleaved (N_STREAMS = 4)...
+  Time: 98.227 ms, Speedup: 1.401x, Correctness: PASS
+Benchmarking interleaved (N_STREAMS = 8)...
+  Time: 98.125 ms, Speedup: 1.402x, Correctness: PASS
+
+========================================================================
+EXERCISE 2 RESULTS TABLE
+========================================================================
+| variant       | N_STREAMS | time (ms) | speedup vs serial pinned | correctness |
+|:--------------|:----------|:----------|:-------------------------|:------------|
+| naive         | 2         | 97.127    | 1.42                     | PASS        |
+| naive         | 4         | 98.236    | 1.40                     | PASS        |
+| naive         | 8         | 98.121    | 1.40                     | PASS        |
+| interleaved   | 2         | 97.175    | 1.42                     | PASS        |
+| interleaved   | 4         | 98.227    | 1.40                     | PASS        |
+| interleaved   | 8         | 98.125    | 1.40                     | PASS        |
+| serial pinned | —         | 137.604   | 1.00                     | PASS        |
+========================================================================
+
+Saved benchmark data to 'pipeline_data.csv'
+variant,n_streams,time_ms,speedup
+serial,1,137.604,1.000
+naive,2,97.127,1.417
+naive,4,98.236,1.401
+naive,8,98.121,1.402
+interleaved,2,97.175,1.416
+interleaved,4,98.227,1.401
+interleaved,8,98.125,1.402

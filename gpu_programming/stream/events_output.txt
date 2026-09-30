@@ -1,0 +1,35 @@
+========================================================================
+Exercise 4: Cross-Stream Synchronization with Events
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Elements: 16777216 (16M floats, ~64 MB per array)
+========================================================================
+
+--- Implementation A: Host-Mediated Sync (cudaStreamSynchronize) ---
+Host-Mediated Sync Time: 3.715 ms
+Spot-check (first 5 elements):
+  d_consumer[0] = 1.025374 (Expected: 1.025368)
+  d_consumer[1] = 3.127928 (Expected: 3.127976)
+  d_consumer[2] = 5.230481 (Expected: 5.230411)
+  d_consumer[3] = 7.333039 (Expected: 7.332963)
+  d_consumer[4] = 9.435588 (Expected: 9.435519)
+
+--- Implementation B: Event-Based Cross-Stream Sync (cudaStreamWaitEvent) ---
+Event-Based Sync Time:   3.683 ms
+Spot-check (first 5 elements):
+  d_consumer[0] = 1.025374 (Expected: 1.025368)
+  d_consumer[1] = 3.127928 (Expected: 3.127976)
+  d_consumer[2] = 5.230481 (Expected: 5.230411)
+  d_consumer[3] = 7.333039 (Expected: 7.332963)
+  d_consumer[4] = 9.435588 (Expected: 9.435519)
+
+========================================================================
+EXERCISE 4 RESULTS TABLE
+========================================================================
+| implementation            | time (ms) |
+|:--------------------------|:----------|
+| host-mediated sync        | 3.715     |
+| event-based cross-stream  | 3.683     |
+========================================================================
+Verification: PASS (Both implementations produced identical, correct outputs)
+Difference: 0.032 ms (0.85% difference)
+========================================================================
