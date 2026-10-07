@@ -1,0 +1,73 @@
+============================================================
+Exercise 2: Coalesced Transpose via Shared Memory
+============================================================
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Theoretical Peak Memory Bandwidth (T4 spec): 320.0 GB/s
+Matrix Dimension: 8192 x 8192 (67108864 elements)
+Memory per matrix: 256.00 MB (Total for in + out: 512.00 MB)
+============================================================
+
+Allocating host memory...
+Initializing input matrix...
+Computing CPU golden reference transpose...
+Allocating device memory...
+Launch configuration: Block (32, 32), Grid (256, 256)
+
+--- Benchmarking Naive Transpose ---
+  Naive Trial 1: 8.864 ms
+  Naive Trial 2: 8.867 ms
+  Naive Trial 3: 8.873 ms
+  Naive Trial 4: 8.862 ms
+  Naive Trial 5: 8.864 ms
+Naive Verification: PASSED
+
+--- Benchmarking Coalesced Transpose (Shared Memory) ---
+  Coalesced Trial 1: 6.214 ms
+  Coalesced Trial 2: 6.215 ms
+  Coalesced Trial 3: 6.220 ms
+  Coalesced Trial 4: 6.212 ms
+  Coalesced Trial 5: 6.224 ms
+Coalesced Verification: PASSED (memcmp returned 0)
+
+======================================================================
+variant              time (ms)       bandwidth (GB/s)   speedup vs naive % of peak
+----------------------------------------------------------------------
+naive                8.866           60.55              1.00            18.92       %
+coalesced            6.217           86.36              1.43            26.99       %
+==================================================================================================================================
+Exercise 2: Coalesced Transpose via Shared Memory
+============================================================
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Theoretical Peak Memory Bandwidth (T4 spec): 320.0 GB/s
+Matrix Dimension: 8192 x 8192 (67108864 elements)
+Memory per matrix: 256.00 MB (Total for in + out: 512.00 MB)
+============================================================
+
+Allocating host memory...
+Initializing input matrix...
+Computing CPU golden reference transpose...
+Allocating device memory...
+Launch configuration: Block (32, 32), Grid (256, 256)
+
+--- Benchmarking Naive Transpose ---
+  Naive Trial 1: 8.864 ms
+  Naive Trial 2: 8.867 ms
+  Naive Trial 3: 8.873 ms
+  Naive Trial 4: 8.862 ms
+  Naive Trial 5: 8.864 ms
+Naive Verification: PASSED
+
+--- Benchmarking Coalesced Transpose (Shared Memory) ---
+  Coalesced Trial 1: 6.214 ms
+  Coalesced Trial 2: 6.215 ms
+  Coalesced Trial 3: 6.220 ms
+  Coalesced Trial 4: 6.212 ms
+  Coalesced Trial 5: 6.224 ms
+Coalesced Verification: PASSED (memcmp returned 0)
+
+======================================================================
+variant              time (ms)       bandwidth (GB/s)   speedup vs naive % of peak
+----------------------------------------------------------------------
+naive                8.866           60.55              1.00            18.92       %
+coalesced            6.217           86.36              1.43            26.99       %
+======================================================================
