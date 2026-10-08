@@ -6,7 +6,7 @@ GPU used: Tesla T4, 7.5
 GPU peak bandwidth: 320 GB/s
 Environment: Colab
 CUDA toolkit version: 12.8
-Time spent: ___ hours
+Time spent: 6 hours
 
 ## Exercise 1 — Naive Transpose Roofline Positioning
 ```bash
@@ -68,16 +68,32 @@ Q5: we separated the process into 2 phase, read and write. with read coalescingl
 Q6: it comes down to the write to shared memory, since we said we could read from global COALESCINGLY since the memory is consecutive but the write onto the same bank in shared memory is sequential.
 
 ## Exercise 3 — Bank Conflict Elimination
-[updated timing table with all three variants]
-Q7: (padding speedup)
-Q8: (occupancy cost of padding)
-Q9: (padding vs swizzling)
+========================================================================================
+variant                  time (ms)    bandwidth (GB/s)   speedup vs naive   % of peak
+----------------------------------------------------------------------------------------
+naive                    9.017        59.54              1.00               18.61       %
+coalesced                6.583        81.55              1.37               25.48       %
+coalesced + padded       2.996        179.17             3.01               55.99       %
+========================================================================================
+Padded vs Coalesced Speedup: 2.20x (54.5% improvement)
+========================================================================================
+
+Q7: about 54.5 % speed up with the coalesced. but also 67.1% from the naive one. it is the shared memory blank conflict. not the whole reading and writing things. so this is just one part that we now optimized it to works on its best and contribute this much amount
+Q8: Yes, that there is a cost of padding. which is at 3% increase in memory usage per tile. and then if we take the the 100KB limit now we could only have 24 instead of 25 block per sm. but in 3 percent more memory usage per tile but at 50% in time improvement. that's the fact that we cant discard.
+
+also there are other limits, such as thread per sm, registers, etc. Maybe in some case we might reached that limit before the memory limit so that's why it would not be that big of a deal
+Q9: maybe padding here is fits better. from this [link](https://apxml.com/courses/compiler-optimizations-machine-learning/chapter-5-hardware-aware-code-generation/shared-memory-banking-conflicts). it said that swizzling strenghts' are on the tight memory kernel and also when we need vectorize load. so our kernel is not really that type so padding - the simpler fix just works here.
 
 ## Exercise 4 — Warp Shuffle Reduction
-[timing table]
-Q10: (why shuffle helps in memory-bound workload)
-Q11: (cycles saved per block)
-Q12: (prediction for N=1024)
+========================================================================================
+variant              time (ms)       bandwidth (GB/s)   speedup vs shared  % of peak
+----------------------------------------------------------------------------------------
+shared mem           9.924           54.10              1.00               16.91       %
+warp shuffle         5.303           101.24             1.87               31.64       %
+========================================================================================
+Q10: so basically it helps with the speed up of the memory bound since we are not waiting for thread to finished loading with `__synchtreads` anymore, we can go for each warp, and the shuffling take so little time, much lower than the shared memory so that's why it helps.
+Q11: from the calculation, in implementation a we need 8 reduction iteration. which each for 25 cycles so 200 cycles. but for 32 thread in warps. we only 5 for each warps. and then another 5 from reduction across warps so 5+5 cycles and one read write adding the total cycle counts to be around 50. so we could save like 150 cycles
+Q12: I predicted that the B wil be faster, but not large margin. since now the load time and compute time would be quite similar. the saving margin wouldn't be so large
 
 ## Bonus (if attempted)
 [progressive plot]
@@ -85,4 +101,4 @@ BQ1: (highest % of peak)
 BQ2: (technique not applied)
 
 ## Reflection (optional)
-What was most surprising? What would you investigate next?
+quite fun actually. the results goes along what we have learn.

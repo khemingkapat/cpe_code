@@ -1,0 +1,36 @@
+============================================================
+Exercise 4: Warp Shuffle Reduction
+============================================================
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Theoretical Peak Memory Bandwidth (T4 spec): 320.0 GB/s
+Number of Elements: 134217728 (128.00 M elements, 512.00 MB)
+============================================================
+
+Allocating and initializing host memory (N=134217728)...
+Computing CPU reference sum via Kahan summation...
+CPU Reference Sum: 134199652.242972
+
+Launch configuration: Block size = 256, Grid size = 524288 blocks
+
+--- Benchmarking Implementation A: Shared Memory Reduction ---
+  Shared Trial 1: 9.922 ms
+  Shared Trial 2: 9.918 ms
+  Shared Trial 3: 9.923 ms
+  Shared Trial 4: 9.931 ms
+  Shared Trial 5: 9.925 ms
+  GPU Result: 134199416.000000, Rel Error: 1.760384e-06 (PASSED)
+
+--- Benchmarking Implementation B: Warp Shuffle Reduction ---
+  Shuffle Trial 1: 5.300 ms
+  Shuffle Trial 2: 5.301 ms
+  Shuffle Trial 3: 5.306 ms
+  Shuffle Trial 4: 5.306 ms
+  Shuffle Trial 5: 5.302 ms
+  GPU Result: 134199392.000000, Rel Error: 1.939222e-06 (PASSED)
+
+========================================================================================
+variant              time (ms)       bandwidth (GB/s)   speedup vs shared  % of peak
+----------------------------------------------------------------------------------------
+shared mem           9.924           54.10              1.00               16.91       %
+warp shuffle         5.303           101.24             1.87               31.64       %
+========================================================================================

@@ -1,0 +1,48 @@
+============================================================
+Exercise 3: Bank Conflict Elimination (Padded Shared Memory)
+============================================================
+GPU Device: Tesla T4 (Compute Capability 7.5)
+Theoretical Peak Memory Bandwidth (T4 spec): 320.0 GB/s
+Matrix Dimension: 8192 x 8192 (67108864 elements)
+Memory per matrix: 256.00 MB (Total for in + out: 512.00 MB)
+============================================================
+
+Allocating host memory...
+Initializing input matrix...
+Computing CPU golden reference transpose...
+Allocating device memory...
+Launch configuration: Block (32, 32), Grid (256, 256)
+
+--- Benchmarking Variant 1: Naive Transpose ---
+  Naive Trial 1: 9.022 ms
+  Naive Trial 2: 9.017 ms
+  Naive Trial 3: 9.009 ms
+  Naive Trial 4: 9.011 ms
+  Naive Trial 5: 9.028 ms
+  Verification: PASSED
+
+--- Benchmarking Variant 2: Coalesced (Unpadded) ---
+  Coalesced Trial 1: 6.579 ms
+  Coalesced Trial 2: 6.584 ms
+  Coalesced Trial 3: 6.581 ms
+  Coalesced Trial 4: 6.585 ms
+  Coalesced Trial 5: 6.588 ms
+  Verification: PASSED
+
+--- Benchmarking Variant 3: Coalesced + Padded (+1 Column) ---
+  Padded Trial 1: 2.997 ms
+  Padded Trial 2: 2.994 ms
+  Padded Trial 3: 2.996 ms
+  Padded Trial 4: 2.998 ms
+  Padded Trial 5: 2.997 ms
+  Verification: PASSED
+
+========================================================================================
+variant                  time (ms)    bandwidth (GB/s)   speedup vs naive   % of peak
+----------------------------------------------------------------------------------------
+naive                    9.017        59.54              1.00               18.61       %
+coalesced                6.583        81.55              1.37               25.48       %
+coalesced + padded       2.996        179.17             3.01               55.99       %
+========================================================================================
+Padded vs Coalesced Speedup: 2.20x (54.5% improvement)
+========================================================================================
