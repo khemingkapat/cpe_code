@@ -1,0 +1,14 @@
+Generating SQLite file pipeline_nvtx_report.sqlite from pipeline_nvtx_report.nsys-rep
+Processing [pipeline_nvtx_report.sqlite] with [/opt/nvidia/nsight-compute/2025.3.1/host/target-linux-x64/reports/nvtx_pushpop_sum.py]... 
+
+ ** NVTX Push/Pop Range Summary (nvtx_pushpop_sum):
+
+ Time (%)  Total Time (ns)  Instances    Avg (ns)       Med (ns)      Min (ns)     Max (ns)    StdDev (ns)      Range    
+ --------  ---------------  ---------  -------------  -------------  -----------  -----------  -----------  -------------
+     99.7      509,753,793          1  509,753,793.0  509,753,793.0  509,753,793  509,753,793          0.0  :Setup       
+      0.1          523,734         10       52,373.4       14,603.5       14,167      391,103    119,018.8  :Iteration   
+      0.1          375,700         10       37,570.0        4,676.0        4,358      333,002    103,805.4  :Fast phase  
+      0.0          251,193          1      251,193.0      251,193.0      251,193      251,193          0.0  :Cleanup     
+      0.0           70,383         10        7,038.3        4,548.0        4,347       29,126      7,763.1  :Medium phase
+      0.0           67,493         10        6,749.3        4,542.0        4,300       26,181      6,832.1  :Slow phase  
+

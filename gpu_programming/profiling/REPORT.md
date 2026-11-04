@@ -86,3 +86,136 @@ by instinct, we optimize the `slow_kernel` because the speed up factor is much l
   - Tool: `nsys`
   - Reason: again, system wide api call
 
+---
+
+## Exercise 3 — Nsight Compute: Kernel Analysis on Your Week 9 Kernel
+
+### Metric Summary Table
+
+From `ncu` output (`--set full`):
+
+| Section | Metric Name | Metric Value / Unit |
+| :--- | :--- | :--- |
+| **Speed of Light (SOL)** | GPU SM Throughput (`SM [%]`) | **32.88%** |
+| **Speed of Light (SOL)** | GPU Memory Throughput (`Memory [%]`) | **62.38%** |
+| **Memory Workload Analysis** | L1 / TEX Cache Hit Rate (`%`) | **0.00%** |
+| **Memory Workload Analysis** | L2 Cache Hit Rate (`%`) | **50.00%** |
+| **Memory Workload Analysis** | Memory Throughput / DRAM Bandwidth | **199.09 GB/s** (Max Bandwidth: 62.38%) |
+| **Warp State Statistics** | Top 1 Warp Stall Reason & % | **Stall Long Scoreboard (L1TEX Dependency): 52.4%** (17.2 / 32.8 cycles) |
+| **Warp State Statistics** | Top 2 Warp Stall Reason & % | **Stall Barrier / Sync Wait: ~24.8%** (`__syncthreads()` intra-block exchange) |
+
+---
+
+### Q7: SOL Memory % vs SM % & Bound Classification
+- **SOL Memory %:** 62.38%
+- **SOL SM %:** 32.88%
+- **Classification:** more on memory bound, since `transpose_padded` did not do any calculation, mostly data transfer
+- **Week 9 Agreement:** Does this match your Week 9 prediction? Explain why. it should match since that's how we expected and crafted the kernel
+
+---
+
+### Q8: Cache Hit Rates & DRAM Throughput Comparison
+- **L1 Hit Rate:** 0%
+- **L2 Hit Rate:** 50%
+- **DRAM Throughput (ncu):** 199.09 GB/s
+- **Week 9 Measured Bandwidth:** (Week 9 `transpose_padded` was ~179.17 GB/s)
+- **Comparison & Agreement:** Do they agree within 10%? Explain any difference. it is right around 10%
+
+---
+
+### Q9: Top 2 Warp Stall Reasons
+- **Stall Reason 1 & %:**
+  - *Explanation:* that data is not arrive yet so warp couldn't be sent to the scheduler to execute
+- **Stall Reason 2 & %:**
+  - *Explanation:* `__syncthreads` which stall warp to make sure every thread in block wait for the execute to be coherent
+- **Expected Behavior for Memory-Bound Kernel:** Does this match expectations? Why?
+
+yes, memory bound = waiting for data, not compute which this shows the data stall
+
+---
+
+### Q10: Next Optimization Technique
+*If SOL Memory % is ~80% and SM % is ~20%, what optimization technique from Week 9 (e.g. coarse-graining/ILP, 2D register tiling, vector loads float4, etc.) would you try next to push closer to 100% memory bandwidth? Justify your choice.*
+
+**Answer:**
+
+i think the vectorized load would help, since each thread doesn't process anything, giving it more data to work with seems like a good idea to utilize the bandwidth more and pushing it forward to limit
+
+
+---
+
+## Exercise 4 — cuda-gdb: Debugging a Logic Bug
+
+### Q11: Why Compute Sanitizer Missed the Bug
+*Why did Compute Sanitizer NOT catch this bug? (Sanitizer detects memory + sync errors, but this is a...)*
+
+**Answer:**
+sanitizer focus on what's wrong on the code level, not the logic. it is like when we normally code, when compile it shows no error even though the logic is completely wrong. it focused on violation, not what's wrong logically.
+
+
+---
+
+### Q12: `cuda-gdb` vs `printf` Debugging
+*Under what circumstances would you reach for `cuda-gdb` over printf-debugging (device `printf` works in kernels)? Give one scenario where `cuda-gdb` is clearly better.*
+
+**Answer:**
+most of the time I used the `printf`, but debugger in general works better to tracing the error when there are many interconnected components where sometimes it is hard to trace where does the error comes from. and imagine we have very deep loop, every time it spit out something every iteration. that would be impossible to use printf
+
+
+---
+
+### Q13: `-G` vs `-O2` Build and Execution Comparison
+*Report compilation times and runtime behavior: `time nvcc -G -g ...` vs `time nvcc -O2 -lineinfo ...`. Why is `-G` significantly slower to compile and run?*
+
+| Build Flag | Compilation Time (`real`) | Kernel / Execution Characteristics |
+| :--- | :---: | :--- |
+| `nvcc -O2 -lineinfo` | **1.433s** (user 1.141s, sys 0.257s) | **Fast GPU Runtime (100% speed)**. Full compiler optimizations enabled, variables held in fast registers, instructions scheduled for latency hiding. |
+| `nvcc -G -g` | **1.213s** (user 0.955s, sys 0.245s) | **Slow GPU Runtime (10–50× slower)**. Zero GPU optimizations, variables spilled to local memory (DRAM) to support debugger inspection, no register reuse. |
+
+**Explanation:**
+1. **Compilation Time:**
+`-G` ran faster since it doesn't do any optimization, so less overhead on the compile time
+2. **Runtime Execution:**
+theoretically, `-G` should be much slower due to no optimization being done, and also the tracing for debugging tool
+
+---
+
+## Exercise 5 — NVTX Annotations
+
+### NVTX Range Statistics Summary
+
+From `nsys` summary table (`nvtx_pushpop_sum`):
+
+| Range Name | Total Time (ns) | Instances | Avg Time (ns) | Med Time (ns) | Min (ns) | Max (ns) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `:Setup` | 509,753,793 (~509.8 ms) | 1 | 509,753,793.0 | 509,753,793.0 | 509,753,793 | 509,753,793 |
+| `:Iteration` | 523,734 (~0.52 ms) | 10 | 52,373.4 | 14,603.5 | 14,167 | 391,103 |
+| `:Fast phase` | 375,700 (~0.38 ms) | 10 | 37,570.0 | 4,676.0 | 4,358 | 333,002 |
+| `:Cleanup` | 251,193 (~0.25 ms) | 1 | 251,193.0 | 251,193.0 | 251,193 | 251,193 |
+| `:Medium phase` | 70,383 (~0.07 ms) | 10 | 7,038.3 | 4,548.0 | 4,347 | 29,126 |
+| `:Slow phase` | 67,493 (~0.07 ms) | 10 | 6,749.3 | 4,542.0 | 4,300 | 26,181 |
+
+**Total time in "Slow phase" ranges across all 10 iterations:** **67,493 ns** (~67.5 μs CPU launch enqueue time; GPU kernel execution time: **~362.3 ms** as measured in Exercise 2).
+
+---
+
+### Q14: Added Value of NVTX Ranges vs Raw Kernel Names
+*Compare the `nsys` output from Exercise 2 (no NVTX) to this one (with NVTX). What information do the NVTX ranges add that raw kernel names alone don't?*
+
+**Answer:**
+basically naming alone would help to detect, by just not have to figure out which name refer to which components would help a lot already. it also help figuring out the relation by name and timeline
+
+
+---
+
+### Q15: Importance of Zero-Overhead Property
+*NVTX has ZERO OVERHEAD when profiling is disabled. Why is this property important for production code that will be shipped with annotations left in place?*
+
+**Answer:**
+like we discussed that we would allow delay or latency in dev only, production code must be as flawless as it could. so ability to be able to make a code easy to work with with no overhead penalty is a bliss
+
+
+---
+
+## Reflection
+I didn't join this class, but the lab is straightforward enough. Even though those tools are not a tools that I familiar with but the purpose of each is quite straightforward so that's why it make this lab quite fun.

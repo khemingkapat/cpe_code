@@ -1,0 +1,14 @@
+/content# nvcc -O2 -lineinfo -arch=sm_75 logic_fixed.cu -o logic_fixed
+    ./logic_fixed
+Results (first 10 elements):
+  out[0] = 1.0 (expected: 1.0)
+  out[1] = 2.0 (expected: 2.0)                                                                                                            out[2] = 3.0 (expected: 3.0)
+  out[3] = 4.0 (expected: 4.0)
+  out[4] = 5.0 (expected: 5.0)
+  out[5] = 6.0 (expected: 6.0)
+  out[6] = 7.0 (expected: 7.0)
+  out[7] = 8.0 (expected: 8.0)
+  out[8] = 9.0 (expected: 9.0)
+  out[9] = 10.0 (expected: 10.0)
+Verification: PASSED
+/content#

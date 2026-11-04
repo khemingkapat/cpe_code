@@ -1,0 +1,11 @@
+/content# time nvcc -O2 -lineinfo -arch=sm_75 logic_bug.cu -o logic_opt
+
+real    0m1.433s
+user    0m1.141s
+sys     0m0.257s
+/content# time nvcc -G -g -arch=sm_75 logic_bug.cu -o logic_debug
+
+real    0m1.213s
+user    0m0.955s
+sys     0m0.245s
+/content#

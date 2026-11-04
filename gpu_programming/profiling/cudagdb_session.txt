@@ -1,0 +1,38 @@
+Breakpoint 1 at 0x955a: file /content/logic_bug.cu, line 17.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff1bff000 (LWP 11815)]
+[New Thread 0x7fffebfff000 (LWP 11816)]
+[Detaching after fork from child process 11817]
+[New Thread 0x7fffea5dd000 (LWP 11827)]
+[Switching focus to CUDA kernel 0, grid 1, block (0,0,0), thread (0,0,0), device 0, sm 0, warp 0, lane 0]
+
+CUDA thread hit Breakpoint 1.2, weighted_sum<<<(1,1,1),(32,1,1)>>> (x=0x7fffcf200000, w=0x7fffcf200200, out=0x7fffcf200400, N=32) at logic_bug.cu:18
+18	    int gid = blockIdx.x * blockDim.x + threadIdx.x;
+19	    if (gid < N) {
+CUDA focus unchanged.
+$1 = 0
+[Switching focus to CUDA kernel 0, grid 1, block (0,0,0), thread (5,0,0), device 0, sm 0, warp 0, lane 5]
+19	    if (gid < N) {
+$2 = 5
+20	        float sum = 0.0f;
+22	        for (int k = 0; k < gid; ++k) {
+$3 = 0
+23	            sum += x[k] * w[k];
+$4 = 0
+[Thread 0x7fffebfff000 (LWP 11816) exited]
+Results (first 10 elements):
+  out[0] = 0.0 (expected: 1.0)
+  out[1] = 1.0 (expected: 2.0)
+  out[2] = 2.0 (expected: 3.0)
+  out[3] = 3.0 (expected: 4.0)
+  out[4] = 4.0 (expected: 5.0)
+  out[5] = 5.0 (expected: 6.0)
+  out[6] = 7.0 (expected: 7.0)
+  out[7] = 8.0 (expected: 8.0)
+  out[8] = 9.0 (expected: 9.0)
+  out[9] = 10.0 (expected: 10.0)
+[Thread 0x7ffff1bff000 (LWP 11815) exited]
+[Thread 0x7ffff7a00000 (LWP 11811) exited]
+[Thread 0x7fffea5dd000 (LWP 11827) exited]
+[Inferior 1 (process 11811) exited normally]
