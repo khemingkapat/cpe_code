@@ -12,6 +12,11 @@
       slurmUser = "66070503408@cpe.kmutt.ac.th";
       slurmHost = "portal.slurm.cpe.kmutt.ac.th";
 
+      libPath = pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib
+        pkgs.zlib
+      ];
+
       slurm-ssh = pkgs.writeShellScriptBin "slurm-ssh" ''
         exec ssh -l ${slurmUser} ${slurmHost} "$@"
       '';
@@ -93,6 +98,7 @@
 
       colab-start = pkgs.writeShellScriptBin "colab-start" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
         GPU="''${1:-T4}"
         SESSION="''${2:-cuda-dev}"
         echo "==> Starting Colab session '$SESSION' (GPU: $GPU)..."
@@ -101,6 +107,7 @@
 
       colab-stop = pkgs.writeShellScriptBin "colab-stop" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
         SESSION="''${1:-cuda-dev}"
         echo "==> Stopping Colab session '$SESSION'..."
         colab stop -s "$SESSION"
@@ -108,17 +115,20 @@
 
       colab-status = pkgs.writeShellScriptBin "colab-status" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
         echo "==> Active Colab sessions:"
         colab sessions
       '';
 
       colab-console = pkgs.writeShellScriptBin "colab-console" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
         exec colab console "$@"
       '';
 
       colab-push = pkgs.writeShellScriptBin "colab-push" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
         if [ $# -lt 1 ]; then
           if [ -f "matmult.cu" ]; then
             SRC="matmult.cu"
@@ -210,6 +220,7 @@
       # colab-submit <file.cu> [-a arch] [-s session] [-t timeout] [-- <args...>]
       colab-submit = pkgs.writeShellScriptBin "colab-submit" ''
         export PATH="$HOME/.local/bin:$PATH"
+        export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
 
         ARCH="sm_75"
         SESSION="cuda-dev"
@@ -327,6 +338,7 @@
 
         shellHook = ''
           export PATH="$HOME/.local/bin:$PATH"
+          export LD_LIBRARY_PATH="${libPath}:''${LD_LIBRARY_PATH:-}"
 
           # Define shell aliases and functions for interactive shells
           alias slurm-ssh='ssh -l ${slurmUser} ${slurmHost}'
@@ -363,14 +375,6 @@
             echo "==> 'colab' CLI not found. Installing via uv tool..."
             uv tool install google-colab-cli || echo "Failed to auto-install google-colab-cli."
           fi
-
-          # Patch colab-cli 0.6.0 bug: jupyter_kernel_client renamed KernelClient → JupyterKernelClient
-          _RUNTIME_PY=$(find "$HOME/.local/share/uv/tools/google-colab-cli" -name "runtime.py" -path "*/colab_cli/*" 2>/dev/null | head -1)
-          if [ -n "$_RUNTIME_PY" ] && grep -q 'jupyter_kernel_client\.KernelClient' "$_RUNTIME_PY" 2>/dev/null; then
-            sed -i 's/jupyter_kernel_client\.KernelClient/jupyter_kernel_client.JupyterKernelClient/g' "$_RUNTIME_PY"
-            echo "==> Patched colab-cli runtime.py (KernelClient → JupyterKernelClient)"
-          fi
-          unset _RUNTIME_PY
         '';
       };
     };
