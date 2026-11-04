@@ -1,0 +1,46 @@
+/content# nvcc -O2 -lineinfo -arch=sm_75 pipeline.cu -o pipeline
+/content# nsys profile --stats=true -t cuda -o pipeline_report ./pipeline
+Collecting data...
+Initializing 3-stage pipeline (N = 16777216, blocks = 65536, threads/block = 256)...
+Pipeline completed successfully.
+Generating '/tmp/nsys-report-8d5d.qdstrm'
+[1/6] [========================100%] pipeline_report.nsys-rep
+[2/6] [========================100%] pipeline_report.sqlite
+[3/6] Executing 'cuda_api_sum' stats report
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)       Med (ns)      Min (ns)     Max (ns)    StdDev (ns)           Name
+ --------  ---------------  ---------  -------------  -------------  -----------  -----------  -----------  ----------------------
+     68.9      404,493,363          1  404,493,363.0  404,493,363.0  404,493,363  404,493,363          0.0  cudaDeviceSynchronize
+     31.0      181,820,124          1  181,820,124.0  181,820,124.0  181,820,124  181,820,124          0.0  cudaMalloc
+      0.1          457,255         30       15,241.8        3,864.0        3,509      304,435     54,862.0  cudaLaunchKernel
+      0.0          166,570          1      166,570.0      166,570.0      166,570      166,570          0.0  cudaFree
+      0.0           69,547          1       69,547.0       69,547.0       69,547       69,547          0.0  cuLibraryLoadData
+      0.0           30,878          1       30,878.0       30,878.0       30,878       30,878          0.0  cudaMemset
+      0.0            3,535         30          117.8           90.0           85          568         93.9  cuKernelGetName
+      0.0            1,235          3          411.7          435.0          202          598        199.0  cuLibraryGetKernel
+      0.0            1,111          1        1,111.0        1,111.0        1,111        1,111          0.0  cuModuleGetLoadingMode
+
+[4/6] Executing 'cuda_gpu_kern_sum' stats report
+
+ Time (%)  Total Time (ns)  Instances    Avg (ns)      Med (ns)     Min (ns)    Max (ns)   StdDev (ns)              Name
+ --------  ---------------  ---------  ------------  ------------  ----------  ----------  ------------  ---------------------------
+     89.5      362,254,063         10  36,225,406.3  33,659,312.5  21,260,411  52,097,962  15,425,650.8  slow_kernel(float *, int)
+      9.0       36,492,402         10   3,649,240.2   2,440,484.0   2,327,541   5,532,710   1,621,266.9  medium_kernel(float *, int)
+      1.5        5,881,189         10     588,118.9     588,413.0     542,685     632,477      46,373.5  fast_kernel(float *, int)
+
+[5/6] Executing 'cuda_gpu_mem_time_sum' stats report
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)    Operation
+ --------  ---------------  -----  ---------  ---------  --------  --------  -----------  -------------
+    100.0          285,791      1  285,791.0  285,791.0   285,791   285,791          0.0  [CUDA memset]
+
+[6/6] Executing 'cuda_gpu_mem_size_sum' stats report
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)    Operation
+ ----------  -----  --------  --------  --------  --------  -----------  -------------
+     67.109      1    67.109    67.109    67.109    67.109        0.000  [CUDA memset]
+
+Generated:
+        /content/pipeline_report.nsys-rep
+        /content/pipeline_report.sqlite
+/content#

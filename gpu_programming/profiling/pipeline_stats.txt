@@ -1,0 +1,11 @@
+Generating SQLite file pipeline_report.sqlite from pipeline_report.nsys-rep
+Processing [pipeline_report.sqlite] with [/opt/nvidia/nsight-compute/2025.3.1/host/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances    Avg (ns)      Med (ns)     Min (ns)    Max (ns)   StdDev (ns)              Name            
+ --------  ---------------  ---------  ------------  ------------  ----------  ----------  ------------  ---------------------------
+     89.5      362,254,063         10  36,225,406.3  33,659,312.5  21,260,411  52,097,962  15,425,650.8  slow_kernel(float *, int)  
+      9.0       36,492,402         10   3,649,240.2   2,440,484.0   2,327,541   5,532,710   1,621,266.9  medium_kernel(float *, int)
+      1.5        5,881,189         10     588,118.9     588,413.0     542,685     632,477      46,373.5  fast_kernel(float *, int)  
+

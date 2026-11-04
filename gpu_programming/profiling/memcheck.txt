@@ -1,0 +1,207 @@
+/content# nvcc -O2 -lineinfo -arch=sm_75 buggy.cu -o buggy
+/content# compute-sanitizer --tool memcheck ./buggy
+========= COMPUTE-SANITIZER
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (232,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fa0 is out of bounds
+=========     and is 1 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (233,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fa4 is out of bounds
+=========     and is 5 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (234,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fa8 is out of bounds
+=========     and is 9 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (235,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fac is out of bounds
+=========     and is 13 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (236,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fb0 is out of bounds
+=========     and is 17 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (237,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fb4 is out of bounds
+=========     and is 21 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (238,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fb8 is out of bounds
+=========     and is 25 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (239,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fbc is out of bounds
+=========     and is 29 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (240,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fc0 is out of bounds
+=========     and is 33 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (241,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fc4 is out of bounds
+=========     and is 37 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (242,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fc8 is out of bounds
+=========     and is 41 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (243,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fcc is out of bounds
+=========     and is 45 bytes after the nearest allocation at 0x78be4f000000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (244,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fd0 is out of bounds
+=========     and is 48 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (245,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fd4 is out of bounds
+=========     and is 44 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (246,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fd8 is out of bounds
+=========     and is 40 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (247,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fdc is out of bounds
+=========     and is 36 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (248,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fe0 is out of bounds
+=========     and is 32 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (249,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fe4 is out of bounds
+=========     and is 28 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (250,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fe8 is out of bounds
+=========     and is 24 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (251,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000fec is out of bounds
+=========     and is 20 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (252,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000ff0 is out of bounds
+=========     and is 16 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (253,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000ff4 is out of bounds
+=========     and is 12 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (254,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000ff8 is out of bounds
+=========     and is 8 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Invalid __global__ read of size 4 bytes
+=========     at broken_kernel(float *, const float *, int *, int)+0x60 in buggy.cu:22
+=========     by thread (255,0,0) in block (3,0,0)
+=========     Access to 0x78be4f000ffc is out of bounds
+=========     and is 4 bytes before the nearest allocation at 0x78be4f001000 of size 4,000 bytes
+=========     Saved host backtrace up to driver entry point at kernel launch time
+=========         Host Frame: main [0x8c9b] in buggy
+=========
+========= Program hit cudaErrorLaunchFailure (error 719) due to "unspecified launch failure" on CUDA API call to cudaDeviceSynchronize.
+=========     Saved host backtrace up to driver entry point at error
+=========         Host Frame: main [0x8bb4] in buggy
+=========
+Kernel execution error: unspecified launch failure
+========= Program hit cudaErrorLaunchFailure (error 719) due to "unspecified launch failure" on CUDA API call to cudaMemcpy.
+=========     Saved host backtrace up to driver entry point at error
+=========         Host Frame: main [0x8bd3] in buggy
+=========
+CUDA error at buggy.cu:66: unspecified launch failure
+========= Target application returned an error
+========= ERROR SUMMARY: 26 errors

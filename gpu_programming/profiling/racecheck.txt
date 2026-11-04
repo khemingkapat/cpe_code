@@ -1,0 +1,10 @@
+/content# compute-sanitizer --tool racecheck ./buggy
+========= COMPUTE-SANITIZER
+========= Error: Race reported between Read access at broken_kernel(float *, const float *, int *, int)+0x210 in buggy.cu:30
+=========     and Write access at broken_kernel(float *, const float *, int *, int)+0x130 in buggy.cu:22 [28 hazards]
+=========     and Write access at broken_kernel(float *, const float *, int *, int)+0x1d0 in buggy.cu:26 [4 hazards]
+=========     and Write access at broken_kernel(float *, const float *, int *, int)+0x1f0 in buggy.cu:29 [4064 hazards]
+=========
+out[0] = 266.000000, counter = 1024
+========= RACECHECK SUMMARY: 1 hazard displayed (1 error, 0 warnings)
+/content#

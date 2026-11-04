@@ -1,0 +1,18 @@
+/content# nvcc -O2 -lineinfo -arch=sm_75 fixed.cu -o fixed
+/content#   compute-sanitizer --tool memcheck  ./fixed
+    compute-sanitizer --tool racecheck ./fixed
+    compute-sanitizer --tool initcheck ./fixed
+    compute-sanitizer --tool synccheck ./fixed
+========= COMPUTE-SANITIZER
+out[0] = 265.000000, counter = 1000
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+out[0] = 265.000000, counter = 1000
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)
+========= COMPUTE-SANITIZER
+out[0] = 265.000000, counter = 1000
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+out[0] = 265.000000, counter = 1000
+========= ERROR SUMMARY: 0 errors
+/content#

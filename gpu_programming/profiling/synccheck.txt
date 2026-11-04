@@ -1,0 +1,5 @@
+/content# compute-sanitizer --tool synccheck ./buggy
+========= COMPUTE-SANITIZER
+out[0] = 266.000000, counter = 1024
+========= ERROR SUMMARY: 0 errors
+/content#

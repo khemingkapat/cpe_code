@@ -1,0 +1,8 @@
+/content# for i in {1..5}; do ./buggy; done
+out[0] = 266.000000, counter = 1024
+out[0] = 266.000000, counter = 1024
+out[0] = 266.000000, counter = 1024
+out[0] = 266.000000, counter = 1024
+out[0] = 266.000000, counter = 1024
+/content#
+
