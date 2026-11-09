@@ -6,4 +6,8 @@
 *.ignore.*
 **/__pycache__/
 bbc/
+**/bbc
+**/bbc/**
+data/
+**/data/
 *.zip
